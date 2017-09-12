@@ -5,22 +5,23 @@
 
 Classwrap is a (320B) JavaScript function for conditionally concatenating [classNames](https://developer.mozilla.org/en-US/docs/Web/API/Element/className).
 
-## Hello World
-
 [Try it Online](https://codepen.io/jbucaran/pen/GMRjRB)
 
 ```js
-function HelloButton(props) {
+function HelloButton({ active, label }) {
   const name = classwrap([
     "btn",
     "btn-large",
     {
-      "btn-pressed": props.isPressed
+      "btn-active": active
     }
   ])
-  return <button class={name}>{props.label}</button>
+
+  return <button class={name}>{label}</button>
 }
 ```
+
+Classwrap works in >=IE9 and you can use it with your favorite JavaScript view library.
 
 ## Installation
 
@@ -75,7 +76,17 @@ classwrap([
 
 ## Credits
 
-Classwrap was inspired by [JedWatson/classnames](https://github.com/JedWatson/classnames) with support for nested objects and [improved](/bench/README.md) performance.
+Classwrap was inspired by [JedWatson/classnames](https://github.com/JedWatson/classnames) with support for nested objects and [improved](/bench/README.md) performance. It differs from classnames in that it does not accept [variable arguments](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/arguments).
+
+```js
+classwrap("foo", "bar", "baz") // => foo
+```
+
+To solve this wrap the arguments inside an array.
+
+```js
+classwrap(["foo", "bar", "baz"]) // => foo bar baz
+```
 
 ## License
 
