@@ -1,4 +1,4 @@
-export default function wrap(classes, prefix) {
+export default function wrap(classes, prefix = " ") {
   let value
   let className = ""
   let type = typeof classes
@@ -6,8 +6,6 @@ export default function wrap(classes, prefix) {
   if ((classes && type === "string") || type === "number") {
     return classes
   }
-
-  prefix = prefix || " "
 
   if (Array.isArray(classes) && classes.length) {
     for (let i = 0; i < classes.length; i++) {
