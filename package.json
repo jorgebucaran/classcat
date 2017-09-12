@@ -1,0 +1,41 @@
+{
+  "name": "classwrap",
+  "description": "320B JavaScript function for conditionally concatenating classNames.",
+  "version": "0.0.1",
+  "main": "dist/classwrap.js",
+  "jsnext:main": "src/index.js",
+  "module": "src/index.js",
+  "license": "MIT",
+  "repository": "jbucaran/classwrap",
+  "files": [
+    "src",
+    "dist"
+  ],
+  "author": "Jorge Bucaran",
+  "keywords": [
+    "css",
+    "jsx",
+    "string",
+    "classname"
+  ],
+  "scripts": {
+    "test": "jest --coverage --no-cache",
+    "build": "npm run bundle && npm run minify",
+    "bundle": "rollup -i src/index.js -o dist/classwrap.js -m -f umd -n classwrap",
+    "minify": "uglifyjs dist/classwrap.js -o dist/classwrap.js --mangle --compress warnings=false --pure-funcs=Object.defineProperty -p relative --source-map dist/classwrap.js.map",
+    "bench": "node bench",
+    "prepublish": "npm run build",
+    "format": "prettier --semi false --write 'src/**/*.js'",
+    "release": "npm run build && npm test && git commit -am $npm_package_version && git tag $npm_package_version && git push && git push --tags && npm publish"
+  },
+  "babel": {
+    "presets": "es2015"
+  },
+  "devDependencies": {
+    "babel-preset-es2015": "^6.24.1",
+    "jest": "^20.0.4",
+    "prettier": "~1.6.0",
+    "rollup": "^0.49.1",
+    "uglify-js": "^2.7.5"
+  }
+}

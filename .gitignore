@@ -1,0 +1,16 @@
+logs
+*.log
+
+# Runtime data
+pids
+*.pid
+*.seed
+
+dist
+lib-cov
+coverage
+node_modules
+.lock-wscript
+yarn.lock
+
+.DS_Store

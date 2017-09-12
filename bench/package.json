@@ -1,0 +1,14 @@
+{
+  "name": "classwrap-benchmarks",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Classwrap vs Classnames benchmarks.",
+  "main": "index.js",
+  "scripts": {},
+  "author": "Jorge Bucaran",
+  "license": "MIT",
+  "devDependencies": {
+    "benchmark": "^1.0.0",
+    "classnames": "2.2.5"
+  }
+}
