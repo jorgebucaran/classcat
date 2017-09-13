@@ -63,3 +63,29 @@ test("deep", () => {
     ])
   ).toBe("foo foo-bar-baz--wrap1 foo-bar-baz--wrap2")
 })
+
+
+describe('with defined function in prototype', () => {
+  beforeEach(() => {
+    Object.prototype.myFunction = () => {};
+  });
+
+  afterEach(() => {
+    delete Object.prototype.myFunction;
+  });
+
+  test("falsy", () => {
+    expect(wrap({})).toBe("")
+  })
+
+  test("objects", () => {
+    expect(
+      wrap({
+        foo: true,
+        bar: true,
+        quux: false,
+        baz: true
+      })
+    ).toBe("foo bar baz")
+  })
+});

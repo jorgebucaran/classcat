@@ -17,7 +17,7 @@ export default function wrap(classes, prefix) {
     }
   } else {
     for (var i in classes) {
-      if ((value = classes[i])) {
+      if (classes.hasOwnProperty(i) && (value = classes[i])) {
         className +=
           (className && prefix) +
           i +
