@@ -1,7 +1,7 @@
 {
   "name": "classwrap",
   "description": "320B JavaScript function for conditionally concatenating classNames.",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "main": "dist/classwrap.js",
   "jsnext:main": "src/index.js",
   "module": "src/index.js",

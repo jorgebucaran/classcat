@@ -3,7 +3,7 @@
 [![Codecov](https://img.shields.io/codecov/c/github/jbucaran/classwrap/master.svg)](https://codecov.io/gh/jbucaran/classwrap)
 [![npm](https://img.shields.io/npm/v/classwrap.svg)](https://www.npmjs.org/package/classwrap)
 
-Classwrap is a (320B) JavaScript function for conditionally concatenating [classNames](https://developer.mozilla.org/en-US/docs/Web/API/Element/className).
+Classwrap is a (340B) JavaScript function for conditionally concatenating [class names](https://developer.mozilla.org/en-US/docs/Web/API/Element/className).
 
 [Try it Online](https://codepen.io/jbucaran/pen/GMRjRB)
 
@@ -21,7 +21,7 @@ function HelloButton({ active, label }) {
 }
 ```
 
-Classwrap works in >=IE9 and you can use it with your favorite JavaScript view library.
+Classwrap works in all browsers >=IE9 and you can use it with your favorite JavaScript view library.
 
 ## Installation
 
@@ -34,7 +34,7 @@ npm i <a href="https://www.npmjs.com/package/classwrap">classwrap</a>
 Then with a module bundler like [rollup](https://github.com/rollup/rollup) or [webpack](https://github.com/webpack/webpack), use as you would anything else.
 
 ```js
-import wrap from "classwrap"
+import classwrap from "classwrap"
 ```
 
 Or download the minified library from the [CDN](https://unpkg.com/classwrap).
@@ -43,11 +43,11 @@ Or download the minified library from the [CDN](https://unpkg.com/classwrap).
 <script src="https://unpkg.com/classwrap"></script>
 ```
 
-You can find the library on `window.classwrap`.
+You can find the function on `window.classwrap`.
 
 ## Usage
 
-Classwrap joins all elements of an array or keys of an object into a string. If the value associated with a given key is falsy, that key will be ignored.
+Classwrap joins all elements of an array or keys of an object into a string. If the value associated with a given key is falsy, the key will be ignored.
 
 ```js
 classwrap([
@@ -59,7 +59,7 @@ classwrap([
 ]) // => btn btn-active
 ```
 
-Nested arrays or objects are supported too. This feature can be useful to create classes with a similar prefix.
+Nested arrays or objects are supported too. Use this feature to assemble classes with a common prefix.
 
 ```js
 classwrap([
@@ -82,7 +82,7 @@ Classwrap was inspired by [JedWatson/classnames](https://github.com/JedWatson/cl
 classwrap("foo", "bar", "baz") // => foo
 ```
 
-To solve this wrap the arguments inside an array.
+To solve this, wrap the arguments inside an array.
 
 ```js
 classwrap(["foo", "bar", "baz"]) // => foo bar baz

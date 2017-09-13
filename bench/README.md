@@ -1,6 +1,6 @@
 # Benchmarks
 
-Classwrap vs Classnames benchmarks.
+[Classwrap](../README.md) vs. [JedWatson/classnames](https://github.com/JedWatson/classnames) benchmarks.
 
 ## Run
 
@@ -10,31 +10,31 @@ npm i && node .
 
 ## Results
 
-Please be aware that results may vary across browsers and different node runtimes.
+Please be aware that results may vary across browsers and Node.js runtimes. All results run on a 2.4GHz Intel Core i7 CPU with 16 GB memory.
 
 <pre>
-<b>classwrap – Strings x 31,562,579 ops/sec ±1.00% (95 runs sampled)</b>
-classnames – Strings x 4,090,017 ops/sec ±0.97% (97 runs sampled)
+classwrap – Strings x <b>31,989,110</b> ops/sec ±0.88% (95 runs sampled)
+classnames – Strings x 4,023,323 ops/sec ±0.84% (93 runs sampled)
 
-> Fastest is classwrap – Strings
+<b>Fastest is classwrap – Strings</b>
 
-<b>classwrap – Objects x 5,799,267 ops/sec ±1.20% (93 runs sampled)</b>
-classnames – Objects x 3,960,623 ops/sec ±0.70% (95 runs sampled)
+classwrap – Objects x <b>5,153,511</b> ops/sec ±0.85% (98 runs sampled)
+classnames – Objects x 3,840,956 ops/sec ±0.86% (97 runs sampled)
 
-> Fastest is classwrap – Objects
+<b>Fastest is classwrap – Objects</b>
 
-<b>classwrap – Strings & Objects x 29,205,143 ops/sec ±0.83% (95 runs sampled)</b>
-classnames – Strings & Objects x 2,700,055 ops/sec ±0.82% (98 runs sampled)
+classwrap – Strings & Objects x <b>30,230,884</b> ops/sec ±0.89% (94 runs sampled)
+classnames – Strings & Objects x 2,697,613 ops/sec ±0.99% (97 runs sampled)
 
-> Fastest is classwrap – Strings & Objects
+<b>Fastest is classwrap – Strings & Objects</b>
 
-<b>classwrap – Mixed x 28,179,169 ops/sec ±1.01% (91 runs sampled)</b>
-classnames – Mixed x 1,278,122 ops/sec ±1.13% (97 runs sampled)
+classwrap – Mixed x <b>29,473,452</b> ops/sec ±0.96% (91 runs sampled)</b>
+classnames – Mixed x 1,577,708 ops/sec ±0.93% (94 runs sampled)
 
-> Fastest is classwrap – Mixed
+<b>Fastest is classwrap – Mixed</b>
 
-<b>classwrap – Arrays x 2,524,879 ops/sec ±0.78% (93 runs sampled)</b>
-classnames – Arrays x 510,376 ops/sec ±0.85% (96 runs sampled)
+classwrap – Arrays x <b>2,488,897</b> ops/sec ±0.83% (95 runs sampled)
+classnames – Arrays x 754,558 ops/sec ±0.82% (95 runs sampled)
 
-> Fastest is classwrap – Arrays
+<b>Fastest is classwrap – Arrays</b>
 </pre>
