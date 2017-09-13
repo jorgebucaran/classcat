@@ -64,15 +64,14 @@ test("deep", () => {
   ).toBe("foo foo-bar-baz--wrap1 foo-bar-baz--wrap2")
 })
 
-
-describe('with defined function in prototype', () => {
+test("not owned props", () => {
   beforeEach(() => {
-    Object.prototype.myFunction = () => {};
-  });
+    Object.prototype.myFunction = () => {}
+  })
 
   afterEach(() => {
-    delete Object.prototype.myFunction;
-  });
+    delete Object.prototype.myFunction
+  })
 
   test("falsy", () => {
     expect(wrap({})).toBe("")
@@ -82,10 +81,9 @@ describe('with defined function in prototype', () => {
     expect(
       wrap({
         foo: true,
-        bar: true,
-        quux: false,
-        baz: true
+        bar: false,
+        baz: false
       })
-    ).toBe("foo bar baz")
+    ).toBe("foo")
   })
-});
+})

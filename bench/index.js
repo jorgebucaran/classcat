@@ -1,7 +1,28 @@
-const cx = require("classnames")
-const wrap = require("../")
-const run = require("./run")
+const benchmark = require("benchmark")
+const classnames = require("classnames")
+const wrapclass = require("../")
 
 require("./fixtures").map(fixed => {
-  run(wrap, cx, fixed, console.log)
+  const suite = new benchmark.Suite()
+
+  suite.add(`classwrap – ${fixed.description}`, () => {
+    wrapclass.apply({}, fixed.args)
+  })
+
+  suite.add(`classnames – ${fixed.description}`, () => {
+    classnames.apply({}, fixed.args)
+  })
+
+  suite.on("cycle", event => console.log(event.target + ""))
+
+  suite.on("complete", function() {
+    console.log(`\nFastest is ${this.filter("fastest").pluck("name")} \n`)
+  })
+
+  suite.on("error", ({ target }) => {
+    console.log(target.error.message)
+    throw target.error
+  })
+
+  suite.run()
 })
