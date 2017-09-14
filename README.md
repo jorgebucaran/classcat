@@ -32,9 +32,7 @@ function ToggleButton({ toggle, isOn }) {
 
 Classwrap works in all browsers >=IE9 and you can use it with your favorite JavaScript view library.
 
-![Classwrap](https://user-images.githubusercontent.com/56996/30416101-cda83bd4-9965-11e7-9db5-230ba3fc83fd.gif)
-
-
+[![Classwrap](https://user-images.githubusercontent.com/56996/30416101-cda83bd4-9965-11e7-9db5-230ba3fc83fd.gif)](https://codepen.io/jbucaran/full/GMRjRB/)
 
 ## Installation
 
