@@ -3,25 +3,38 @@
 [![Codecov](https://img.shields.io/codecov/c/github/jbucaran/classwrap/master.svg)](https://codecov.io/gh/jbucaran/classwrap)
 [![npm](https://img.shields.io/npm/v/classwrap.svg)](https://www.npmjs.org/package/classwrap)
 
-Classwrap is a (340B) JavaScript function for conditionally concatenating [class names](https://developer.mozilla.org/en-US/docs/Web/API/Element/className).
+Classwrap 0.3 KB JavaScript utility for conditionally concatenating [class names](https://developer.mozilla.org/en-US/docs/Web/API/Element/className).
 
 [Try it Online](https://codepen.io/jbucaran/pen/GMRjRB)
 
 ```js
-function HelloButton({ active, label }) {
-  const name = classwrap([
-    "btn",
-    "btn-large",
-    {
-      "btn-active": active
-    }
-  ])
-
-  return <button class={name}>{label}</button>
+function ToggleButton({ toggle, isOn }) {
+  return (
+    <div class="btn" onclick={toggle}>
+      <div
+        class={classwrap({
+          circle: true,
+          off: !isOn,
+          on: isOn
+        })}
+      />
+      <span
+        class={classwrap({
+          textOff: !isOn
+        })}
+      >
+        {isOn ? "ON" : "OFF"}
+      </span>
+    </div>
+  )
 }
 ```
 
 Classwrap works in all browsers >=IE9 and you can use it with your favorite JavaScript view library.
+
+![Classwrap](https://user-images.githubusercontent.com/56996/30416101-cda83bd4-9965-11e7-9db5-230ba3fc83fd.gif)
+
+
 
 ## Installation
 
