@@ -1,4 +1,6 @@
 
 export as namespace classwrap
 
-export default function (classes: any | any[])
+export type Class = string | number
+
+export default function (classes: Class | Class[])

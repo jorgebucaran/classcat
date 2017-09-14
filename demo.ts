@@ -2,8 +2,6 @@
 
 import classwrap from 'classwrap'
 
-classwrap(null)
-
 classwrap("btn")
 
 classwrap(12)
