@@ -20,7 +20,7 @@
     "classname"
   ],
   "scripts": {
-    "test": "jest --coverage --no-cache && tsc",
+    "test": "jest --coverage --no-cache && tsc --project tests/ts",
     "build": "npm run bundle && npm run minify",
     "bundle": "rollup -i src/index.js -o dist/classwrap.js -m -f umd -n classwrap",
     "minify": "uglifyjs dist/classwrap.js -o dist/classwrap.js --mangle --compress warnings=false --pure-funcs=Object.defineProperty -p relative --source-map dist/classwrap.js.map",
