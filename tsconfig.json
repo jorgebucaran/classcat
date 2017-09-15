@@ -1,0 +1,20 @@
+{
+  "compilerOptions": {
+    "strict": true,
+    "noEmit": true,
+    "baseUrl": ".",
+    "paths": {
+      "classwrap": ["src", "classwrap.d.ts"]
+    }
+  },
+  "files": [
+    "classwrap.d.ts"
+  ],
+  "include": [
+    "tests/*.ts",
+    "tests/**/*.ts"
+  ],
+  "exclude": [
+    "node_modules/**/*.ts"
+  ]
+}

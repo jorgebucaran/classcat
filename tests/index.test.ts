@@ -1,23 +1,24 @@
-// Testing and presentation purpose will be removed before merge
 
 import classwrap from 'classwrap'
 
-classwrap("btn")
+let className: string;
 
-classwrap(12)
+className = classwrap("btn")
 
-classwrap({
+className = classwrap(12)
+
+className = classwrap({
   "btn-active": true,
   "btn-large": false
 })
 
-classwrap([
+className = classwrap([
   "btn",
   "btn-active",
   "btn-large"
 ])
 
-classwrap([
+className = classwrap([
   "btn",
   {
     "btn-active": true,
@@ -25,7 +26,7 @@ classwrap([
   }
 ])
 
-classwrap([
+className = classwrap([
   "tab",
   {
     tab: {
