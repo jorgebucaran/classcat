@@ -14,4 +14,4 @@ export type Class = string | number | ClassSet
  *
  * @param classes
 */
-export default function wrap(classes: Class | Class[])
+export default function wrap(classes: Class | Class[]): string
