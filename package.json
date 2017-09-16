@@ -5,6 +5,7 @@
   "main": "dist/classwrap.js",
   "jsnext:main": "src/index.js",
   "module": "src/index.js",
+  "typings": "src/classwrap.d.ts",
   "license": "MIT",
   "repository": "jbucaran/classwrap",
   "files": [
@@ -19,13 +20,13 @@
     "classname"
   ],
   "scripts": {
-    "test": "jest --coverage --no-cache",
+    "test": "jest --coverage --no-cache && tsc --project tests/ts",
     "build": "npm run bundle && npm run minify",
     "bundle": "rollup -i src/index.js -o dist/classwrap.js -m -f umd -n classwrap",
     "minify": "uglifyjs dist/classwrap.js -o dist/classwrap.js --mangle --compress warnings=false --pure-funcs=Object.defineProperty -p relative --source-map dist/classwrap.js.map",
     "bench": "node bench",
     "prepublish": "npm run build",
-    "format": "prettier --semi false --write 'src/**/*.js'",
+    "format": "prettier --semi false --write 'src/**/*.js' 'src/classwrap.d.ts'",
     "release": "npm run build && npm test && git commit -am $npm_package_version && git tag $npm_package_version && git push && git push --tags && npm publish"
   },
   "babel": {
@@ -36,6 +37,7 @@
     "jest": "^20.0.4",
     "prettier": "~1.6.0",
     "rollup": "^0.49.1",
+    "typescript": "^2.5.2",
     "uglify-js": "^2.7.5"
   }
 }
