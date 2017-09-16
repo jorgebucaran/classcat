@@ -1,12 +1,12 @@
 const benchmark = require("benchmark")
 const classnames = require("classnames")
-const wrapclass = require("../")
+const classwrap = require("../")
 
 require("./fixtures").map(fixed => {
   const suite = new benchmark.Suite()
 
   suite.add(`classwrap – ${fixed.description}`, () => {
-    wrapclass.apply({}, fixed.args)
+    classwrap.apply({}, fixed.args)
   })
 
   suite.add(`classnames – ${fixed.description}`, () => {

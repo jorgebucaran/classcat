@@ -1,0 +1,11 @@
+{
+  "compilerOptions": {
+    "strict": true,
+    "noEmit": true,
+    "baseUrl": "../..",
+    "paths": {
+      "classwrap": ["src", "classwrap.d.ts"]
+    }
+  },
+  "include": ["*.ts", "**/*.ts"]
+}
