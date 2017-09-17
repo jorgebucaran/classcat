@@ -48,13 +48,13 @@ Then with a module bundler like [rollup](https://github.com/rollup/rollup) or [w
 import classwrap from "classwrap"
 ```
 
-Or download the minified library from the [CDN](https://unpkg.com/classwrap).
+Or download the minified library from a [CDN](https://unpkg.com/classwrap).
 
 ```html
 <script src="https://unpkg.com/classwrap"></script>
 ```
 
-You can find the function on `window.classwrap`.
+Then find it on `window.classwrap`.
 
 ## Usage
 
