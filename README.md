@@ -1,11 +1,11 @@
 # Classwrap
-[![Travis CI](https://img.shields.io/travis/jbucaran/classwrap/master.svg)](https://travis-ci.org/jbucaran/classwrap)
-[![Codecov](https://img.shields.io/codecov/c/github/jbucaran/classwrap/master.svg)](https://codecov.io/gh/jbucaran/classwrap)
+[![Travis CI](https://img.shields.io/travis/JorgeBucaran/classwrap/master.svg)](https://travis-ci.org/JorgeBucaran/classwrap)
+[![Codecov](https://img.shields.io/codecov/c/github/JorgeBucaran/classwrap/master.svg)](https://codecov.io/gh/JorgeBucaran/classwrap)
 [![npm](https://img.shields.io/npm/v/classwrap.svg)](https://www.npmjs.org/package/classwrap)
 
 Classwrap is a 0.3 KB JavaScript utility for conditionally concatenating [class names](https://developer.mozilla.org/en-US/docs/Web/API/Element/className).
 
-[Try it Online](https://codepen.io/jbucaran/pen/GMRjRB)
+[Try it Online](https://codepen.io/JorgeBucaran/pen/GMRjRB)
 
 ```js
 function ToggleButton({ toggle, isOn }) {
@@ -32,7 +32,7 @@ function ToggleButton({ toggle, isOn }) {
 
 Classwrap works in all browsers >=IE9 and you can use it with your favorite JavaScript view library.
 
-[![Classwrap](https://user-images.githubusercontent.com/56996/30416101-cda83bd4-9965-11e7-9db5-230ba3fc83fd.gif)](https://codepen.io/jbucaran/full/GMRjRB/)
+[![Classwrap](https://user-images.githubusercontent.com/56996/30416101-cda83bd4-9965-11e7-9db5-230ba3fc83fd.gif)](https://codepen.io/JorgeBucaran/full/GMRjRB/)
 
 ## Installation
 

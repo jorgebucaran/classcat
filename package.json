@@ -7,7 +7,7 @@
   "module": "src/index.js",
   "typings": "classwrap.d.ts",
   "license": "MIT",
-  "repository": "jbucaran/classwrap",
+  "repository": "JorgeBucaran/classwrap",
   "files": [
     "src",
     "dist",
