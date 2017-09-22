@@ -10,7 +10,7 @@ export default function wrap(classes, prefix) {
   prefix = prefix || " "
 
   if (Array.isArray(classes) && classes.length) {
-    for (var i = 0; i < classes.length; i++) {
+    for (var i = 0, l = classes.length; i < l; i++) {
       if ((value = wrap(classes[i], prefix))) {
         className += (className && prefix) + value
       }
