@@ -8,18 +8,20 @@ Classwrap is a 0.3 KB JavaScript utility for conditionally concatenating [class 
 [Try it Online](https://codepen.io/JorgeBucaran/pen/GMRjRB)
 
 ```js
-function ToggleButton({ toggle, isOn }) {
+import cw from "classwrap"
+
+export function ToggleButton({ toggle, isOn }) {
   return (
     <div class="btn" onclick={toggle}>
       <div
-        class={classwrap({
+        class={cw({
           circle: true,
           off: !isOn,
           on: isOn
         })}
       />
       <span
-        class={classwrap({
+        class={cw({
           textOff: !isOn
         })}
       >
@@ -45,7 +47,7 @@ npm i <a href="https://www.npmjs.com/package/classwrap">classwrap</a>
 Then with a module bundler like [rollup](https://github.com/rollup/rollup) or [webpack](https://github.com/webpack/webpack), use as you would anything else.
 
 ```js
-import classwrap from "classwrap"
+import cw from "classwrap"
 ```
 
 Or download the minified library from a [CDN](https://unpkg.com/classwrap).
@@ -61,7 +63,7 @@ Then find it on `window.classwrap`.
 Classwrap joins all elements of an array or keys of an object into a string. If the value associated with a given key is falsy, the key will be ignored.
 
 ```js
-classwrap([
+cw([
   "btn",
   {
     "btn-active": true,
@@ -73,7 +75,7 @@ classwrap([
 Nested arrays or objects are supported too. Use this feature to assemble classes with a common prefix.
 
 ```js
-classwrap([
+cw([
   "tab",
   {
     tab: {
@@ -90,13 +92,13 @@ classwrap([
 Classwrap was inspired by [JedWatson/classnames](https://github.com/JedWatson/classnames) with support for nested objects and [improved](/bench/README.md) performance. It differs from classnames in that it does not accept [variable arguments](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/arguments).
 
 ```js
-classwrap("foo", "bar", "baz") // => foo
+cw("foo", "bar", "baz") // => foo
 ```
 
 To solve this, wrap the arguments inside an array.
 
 ```js
-classwrap(["foo", "bar", "baz"]) // => foo bar baz
+cw(["foo", "bar", "baz"]) // => foo bar baz
 ```
 
 ## License
