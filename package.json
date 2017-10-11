@@ -1,7 +1,7 @@
 {
   "name": "classwrap",
   "description": "0.3 KB JavaScript utility for conditionally concatenating class names.",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "main": "dist/classwrap.js",
   "jsnext:main": "src/index.js",
   "module": "src/index.js",
@@ -26,7 +26,7 @@
     "bundle": "rollup -i src/index.js -o dist/classwrap.js -m -f umd -n classwrap",
     "minify": "uglifyjs dist/classwrap.js -o dist/classwrap.js --mangle --compress warnings=false --pure-funcs=Object.defineProperty -p relative --source-map dist/classwrap.js.map",
     "bench": "node bench",
-    "prepublish": "npm run build",
+    "prepare": "npm run build",
     "format": "prettier --semi false --write 'src/**/*.js' '{,tests/ts/}*.ts'",
     "release": "npm run build && npm test && git commit -am $npm_package_version && git tag $npm_package_version && git push && git push --tags && npm publish"
   },
