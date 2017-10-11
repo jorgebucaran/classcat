@@ -1,7 +1,7 @@
 {
   "name": "classwrap",
   "description": "0.3 KB JavaScript utility for conditionally concatenating class names.",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "main": "dist/classwrap.js",
   "jsnext:main": "src/index.js",
   "module": "src/index.js",
@@ -31,13 +31,13 @@
     "release": "npm run build && npm test && git commit -am $npm_package_version && git tag $npm_package_version && git push && git push --tags && npm publish"
   },
   "babel": {
-    "presets": "es2015"
+    "presets": "env"
   },
   "devDependencies": {
-    "babel-preset-es2015": "^6.24.1",
-    "jest": "^20.0.4",
-    "prettier": "~1.6.0",
-    "rollup": "^0.49.1",
+    "babel-preset-env": "^1.6.0",
+    "jest": "^21.2.1",
+    "prettier": "~1.7.4",
+    "rollup": "^0.50.0",
     "typescript": "^2.5.2",
     "uglify-js": "^2.7.5"
   }
