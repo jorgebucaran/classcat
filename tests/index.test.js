@@ -1,18 +1,18 @@
-import wrap from "../src"
+import cw from "../src"
 
 test("falsy", () => {
-  expect(wrap({})).toBe("")
-  expect(wrap([])).toBe("")
-  expect(wrap(["", null, false, undefined, 0, NaN])).toBe("")
+  expect(cw({})).toBe("")
+  expect(cw([])).toBe("")
+  expect(cw(["", null, false, undefined, 0, NaN])).toBe("")
 })
 
 test("arrays", () => {
-  expect(wrap(["foo", "bar", false, "baz"])).toBe("foo bar baz")
+  expect(cw(["foo", "bar", false, "baz"])).toBe("foo bar baz")
 })
 
 test("objects", () => {
   expect(
-    wrap({
+    cw({
       foo: true,
       bar: true,
       quux: false,
@@ -23,7 +23,7 @@ test("objects", () => {
 
 test("mix", () => {
   expect(
-    wrap([
+    cw([
       "foo",
       {
         bar: true,
@@ -35,7 +35,7 @@ test("mix", () => {
 
 test("prefix", () => {
   expect(
-    wrap(
+    cw(
       {
         foo: true,
         bar: true,
@@ -49,7 +49,7 @@ test("prefix", () => {
 
 test("deep", () => {
   expect(
-    wrap([
+    cw([
       "foo",
       {
         foo: {
@@ -65,25 +65,9 @@ test("deep", () => {
 })
 
 test("not owned props", () => {
-  beforeEach(() => {
-    Object.prototype.myFunction = () => {}
-  })
+  Object.prototype.myFunction = () => {}
 
-  afterEach(() => {
-    delete Object.prototype.myFunction
-  })
+  expect(cw({})).toBe("")
 
-  test("falsy", () => {
-    expect(wrap({})).toBe("")
-  })
-
-  test("objects", () => {
-    expect(
-      wrap({
-        foo: true,
-        bar: false,
-        baz: false
-      })
-    ).toBe("foo")
-  })
+  delete Object.prototype.myFunction
 })
