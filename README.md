@@ -32,7 +32,7 @@ export function ToggleButton({ toggle, isOn }) {
 }
 ```
 
-Classwrap works in all browsers >=IE9 and you can use it with your favorite JavaScript view library.
+Classwrap works in all browsers >=IE9. Use it with your favorite JavaScript view library.
 
 [![Classwrap](https://user-images.githubusercontent.com/56996/30416101-cda83bd4-9965-11e7-9db5-230ba3fc83fd.gif)](https://codepen.io/JorgeBucaran/full/GMRjRB/)
 
@@ -44,13 +44,13 @@ Install with npm / Yarn.
 npm i <a href="https://www.npmjs.com/package/classwrap">classwrap</a>
 </pre>
 
-Then with a module bundler like [rollup](https://github.com/rollup/rollup) or [webpack](https://github.com/webpack/webpack), use as you would anything else.
+Then with a module bundler like [Rollup](https://github.com/rollup/rollup) or [Webpack](https://github.com/webpack/webpack), use as you would anything else.
 
 ```js
 import cw from "classwrap"
 ```
 
-Or download the minified library from a [CDN](https://unpkg.com/classwrap).
+Or download the minified library from a [unpkg](https://unpkg.com/classwrap@latest/dist/classwrap.js) or [jsDelivr](https://cdn.jsdelivr.net/npm/classwrap@latest/dist/classwrap.js).
 
 ```html
 <script src="https://unpkg.com/classwrap"></script>
