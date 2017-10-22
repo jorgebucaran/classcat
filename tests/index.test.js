@@ -71,3 +71,9 @@ test("not owned props", () => {
 
   delete Object.prototype.myFunction
 })
+
+test("can't start with number", () => {
+  expect(() => {
+    cw(1)
+  }).toThrow()
+})
