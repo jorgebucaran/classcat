@@ -3,6 +3,10 @@ export default function wrap(classes, prefix) {
   var className = ""
   var type = typeof classes
 
+  if (classes && type === "number" && prefix === undefined) {
+    throw new Error("Valid CSS selectors cannot begin with a number")
+  }
+
   if ((classes && type === "string") || type === "number") {
     return classes
   }
