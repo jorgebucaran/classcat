@@ -28,17 +28,17 @@
     "bench": "node bench",
     "prepare": "npm run build",
     "format": "prettier --semi false --write 'src/**/*.js' '{,tests/ts/}*.ts'",
-    "release": "npm run build && npm test && git commit -am $npm_package_version && git tag $npm_package_version && git push && git push --tags && npm publish"
+    "release": "npm run build && npm test && git commit -am $npm_package_version && git tag $npm_package_version && git push origin master && git push --tags && npm publish"
   },
   "babel": {
     "presets": "env"
   },
   "devDependencies": {
-    "babel-preset-env": "^1.6.0",
+    "babel-preset-env": "^1.6.1",
     "jest": "^21.2.1",
     "prettier": "~1.7.4",
     "rollup": "^0.50.0",
-    "typescript": "^2.5.2",
+    "typescript": "^2.5.3",
     "uglify-js": "^2.7.5"
   }
 }
