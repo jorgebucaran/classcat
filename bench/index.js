@@ -1,28 +1,21 @@
-const benchmark = require("benchmark")
-const classnames = require("classnames")
-const classwrap = require("../")
+const { Suite } = require("benchmark")
+const cx = require("classnames")
+const cc = require("../")
 
-require("./fixtures").map(fixed => {
-  const suite = new benchmark.Suite()
-
-  suite.add(`classwrap – ${fixed.description}`, () => {
-    classwrap.apply({}, fixed.args)
-  })
-
-  suite.add(`classnames – ${fixed.description}`, () => {
-    classnames.apply({}, fixed.args)
-  })
-
-  suite.on("cycle", event => console.log(event.target + ""))
-
-  suite.on("complete", function() {
-    console.log(`\nFastest is ${this.filter("fastest").pluck("name")} \n`)
-  })
-
-  suite.on("error", ({ target }) => {
-    console.log(target.error.message)
-    throw target.error
-  })
-
-  suite.run()
+require("./fixtures").map((fixed, index, { length }) => {
+  const suite = new Suite()
+  suite
+    .add(`Classcat – ${fixed.description}`, () => cc.apply({}, fixed.args))
+    .add(`classNames – ${fixed.description}`, () => cx.apply({}, fixed.args))
+    .on("cycle", ({ target: { name, hz, stats } }) =>
+      console.log(`${name} × ${Math.floor(hz).toLocaleString()} ops/sec`)
+    )
+    .on("complete", function() {
+      console.log(
+        `Fastest is ${this.filter("fastest").map("name")}${index + 1 < length
+          ? "\n"
+          : ""}`
+      )
+    })
+    .run()
 })

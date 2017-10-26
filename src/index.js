@@ -1,4 +1,4 @@
-export default function wrap(classes, prefix) {
+export default function cat(classes, prefix) {
   var value
   var className = ""
   var type = typeof classes
@@ -11,7 +11,7 @@ export default function wrap(classes, prefix) {
 
   if (Array.isArray(classes) && classes.length) {
     for (var i = 0, len = classes.length; i < len; i++) {
-      if ((value = wrap(classes[i], prefix))) {
+      if ((value = cat(classes[i], prefix))) {
         className += (className && prefix) + value
       }
     }
@@ -21,7 +21,7 @@ export default function wrap(classes, prefix) {
         className +=
           (className && prefix) +
           i +
-          (typeof value === "object" ? wrap(value, prefix + i) : "")
+          (typeof value === "object" ? cat(value, prefix + i) : "")
       }
     }
   }

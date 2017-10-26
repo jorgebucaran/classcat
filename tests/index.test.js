@@ -1,18 +1,18 @@
-import cw from "../src"
+import cc from "../src"
 
 test("falsy", () => {
-  expect(cw({})).toBe("")
-  expect(cw([])).toBe("")
-  expect(cw(["", null, false, undefined, 0, NaN])).toBe("")
+  expect(cc({})).toBe("")
+  expect(cc([])).toBe("")
+  expect(cc(["", null, false, undefined, 0, NaN])).toBe("")
 })
 
 test("arrays", () => {
-  expect(cw(["foo", "bar", false, "baz"])).toBe("foo bar baz")
+  expect(cc(["foo", "bar", false, "baz"])).toBe("foo bar baz")
 })
 
 test("objects", () => {
   expect(
-    cw({
+    cc({
       foo: true,
       bar: true,
       quux: false,
@@ -24,7 +24,7 @@ test("objects", () => {
 test("mix", () => {
   const baz = "baz"
   expect(
-    cw([
+    cc([
       "foo",
       "foo-bar",
       {
@@ -36,7 +36,7 @@ test("mix", () => {
 
 test("prefix", () => {
   expect(
-    cw(
+    cc(
       {
         foo: true,
         bar: true,
@@ -50,7 +50,7 @@ test("prefix", () => {
 
 test("deep", () => {
   expect(
-    cw([
+    cc([
       "foo",
       {
         foo: {
@@ -68,7 +68,7 @@ test("deep", () => {
 test("not owned props", () => {
   Object.prototype.myFunction = () => {}
 
-  expect(cw({})).toBe("")
+  expect(cc({})).toBe("")
 
   delete Object.prototype.myFunction
 })

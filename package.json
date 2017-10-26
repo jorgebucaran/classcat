@@ -1,17 +1,17 @@
 {
-  "name": "classwrap",
+  "name": "classcat",
   "description": "0.3 KB JavaScript utility for conditionally concatenating class names.",
-  "version": "1.2.3",
-  "main": "dist/classwrap.js",
+  "version": "1.0.0",
+  "main": "dist/classcat.js",
   "jsnext:main": "src/index.js",
   "module": "src/index.js",
-  "typings": "classwrap.d.ts",
+  "typings": "classcat.d.ts",
   "license": "MIT",
-  "repository": "JorgeBucaran/classwrap",
+  "repository": "JorgeBucaran/classcat",
   "files": [
     "src",
     "dist",
-    "classwrap.d.ts"
+    "classcat.d.ts"
   ],
   "author": "Jorge Bucaran",
   "keywords": [
@@ -23,8 +23,8 @@
   "scripts": {
     "test": "jest --coverage --no-cache && tsc -p tests/ts",
     "build": "npm run bundle && npm run minify",
-    "bundle": "rollup -i src/index.js -o dist/classwrap.js -m -f umd -n classwrap",
-    "minify": "uglifyjs dist/classwrap.js -o dist/classwrap.js --mangle --compress warnings=false --pure-funcs=Object.defineProperty -p relative --source-map dist/classwrap.js.map",
+    "bundle": "rollup -i src/index.js -o dist/classcat.js -m -f umd -n classcat",
+    "minify": "uglifyjs dist/classcat.js -o dist/classcat.js --mangle --compress warnings=false --pure-funcs=Object.defineProperty -p relative --source-map dist/classcat.js.map",
     "bench": "node bench",
     "prepare": "npm run build",
     "format": "prettier --semi false --write 'src/**/*.js' '{,tests/ts/}*.ts'",

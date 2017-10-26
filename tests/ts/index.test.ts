@@ -1,18 +1,18 @@
-import classwrap from "classwrap"
+import cc from "classcat"
 
 let className: string
 
-className = classwrap("btn")
+className = cc("btn")
 
-className = classwrap(12)
+className = cc(12)
 
-className = classwrap({
+className = cc({
   btn: true
 })
 
-className = classwrap(["btn", "btn-active"])
+className = cc(["btn", "btn-active"])
 
-className = classwrap([
+className = cc([
   "btn",
   {
     btn: {

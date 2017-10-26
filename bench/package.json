@@ -1,14 +1,14 @@
 {
-  "name": "classwrap-benchmarks",
+  "name": "classcat-benchmarks",
   "version": "1.0.0",
   "private": true,
-  "description": "Classwrap vs JedWatson/classnames benchmarks.",
+  "description": "Classcat vs JedWatson/classnames benchmarks.",
   "main": "index.js",
   "scripts": {},
   "author": "Jorge Bucaran",
   "license": "MIT",
   "devDependencies": {
     "benchmark": "^2.1.4",
-    "classnames": "2.2.5"
+    "classnames": "*"
   }
 }

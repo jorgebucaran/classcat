@@ -4,7 +4,7 @@
     "noEmit": true,
     "baseUrl": "../..",
     "paths": {
-      "classwrap": ["src", "classwrap.d.ts"]
+      "classcat": ["src", "classcat.d.ts"]
     }
   },
   "include": ["*.ts", "**/*.ts"]
