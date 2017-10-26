@@ -22,15 +22,16 @@ test("objects", () => {
 })
 
 test("mix", () => {
+  const baz = "baz"
   expect(
     cw([
       "foo",
+      "foo-bar",
       {
-        bar: true,
-        baz: false
+        [`foo-${baz}`]: !!baz
       }
     ])
-  ).toBe("foo bar")
+  ).toBe("foo foo-bar foo-baz")
 })
 
 test("prefix", () => {
@@ -70,10 +71,4 @@ test("not owned props", () => {
   expect(cw({})).toBe("")
 
   delete Object.prototype.myFunction
-})
-
-test("can't start with number", () => {
-  expect(() => {
-    cw(1)
-  }).toThrow()
 })
