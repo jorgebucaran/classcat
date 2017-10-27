@@ -3,7 +3,7 @@
 [![Codecov](https://img.shields.io/codecov/c/github/JorgeBucaran/classcat/master.svg)](https://codecov.io/gh/JorgeBucaran/classcat)
 [![npm](https://img.shields.io/npm/v/classcat.svg)](https://www.npmjs.org/package/classcat)
 
-Classcat is a 0.3 KB JavaScript utility for conditionally concatenating [class names](https://developer.mozilla.org/en-US/docs/Web/API/Element/className).
+Classcat is a 0.3 KB JavaScript utility for quickly conditionally concatenating [class names](https://developer.mozilla.org/en-US/docs/Web/API/Element/className).
 
 [Try it Online](https://codepen.io/JorgeBucaran/pen/GMRjRB)
 
@@ -32,9 +32,9 @@ export function ToggleButton({ toggle, isOn }) {
 }
 ```
 
-classcat works in all browsers >=IE9. Use it with your favorite JavaScript view library.
+Classcat works in all browsers >= IE9 and you can use it with your favorite JavaScript UI library.
 
-[![classcat](https://user-images.githubusercontent.com/56996/30416101-cda83bd4-9965-11e7-9db5-230ba3fc83fd.gif)](https://codepen.io/JorgeBucaran/full/GMRjRB/)
+[![Classcat](https://user-images.githubusercontent.com/56996/30416101-cda83bd4-9965-11e7-9db5-230ba3fc83fd.gif)](https://codepen.io/JorgeBucaran/full/GMRjRB/)
 
 ## Installation
 
@@ -58,9 +58,13 @@ Or download the minified library from a [unpkg](https://unpkg.com/classcat@lates
 
 Then find it on `window.classcat`.
 
+```js
+const cc = classcat
+```
+
 ## Usage
 
-classcat joins all elements of an array or keys of an object into a string. If the value associated with a given key is falsy, the key will be ignored.
+Classcat joins all elements of an array or keys of an object into a string. If the value associated with a given key is falsy, the key will be ignored.
 
 ```js
 cc([
@@ -89,13 +93,13 @@ cc([
 
 ## Credits
 
-classcat was inspired by [JedWatson/classnames](https://github.com/JedWatson/classnames) with support for nested objects and [improved](/bench/README.md) performance. It differs from classnames in that it does not accept [variable arguments](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/arguments).
+Classcat is inspired by [JedWatson/classNames](https://github.com/JedWatson/classnames) with support for nested objects and [better performance](/bench/README.md). It differs from classNames in that it does not accept [variable arguments](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/arguments).
 
 ```js
 cc("foo", "bar", "baz") // => foo
 ```
 
-To solve this, wrap the arguments inside an array.
+To work around this, wrap the arguments inside an array.
 
 ```js
 cc(["foo", "bar", "baz"]) // => foo bar baz
@@ -103,4 +107,4 @@ cc(["foo", "bar", "baz"]) // => foo bar baz
 
 ## License
 
-classcat is MIT licensed. See [LICENSE](LICENSE.md).
+Classcat is MIT licensed. See [LICENSE](LICENSE.md).
