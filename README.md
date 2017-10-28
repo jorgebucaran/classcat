@@ -58,10 +58,6 @@ Or download the minified library from a [unpkg](https://unpkg.com/classcat@lates
 
 Then find it on `window.classcat`.
 
-```js
-const cc = classcat
-```
-
 ## Usage
 
 Classcat joins all elements of an array or keys of an object into a string. If the value associated with a given key is falsy, the key will be ignored.
