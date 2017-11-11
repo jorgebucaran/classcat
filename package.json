@@ -1,7 +1,7 @@
 {
   "name": "classcat",
-  "description": "0.3 KB JavaScript utility for conditionally concatenating class names.",
-  "version": "1.0.1",
+  "description": "0.3 KB JavaScript utility for conditionally concatenating CSS class names.",
+  "version": "1.0.2",
   "main": "dist/classcat.js",
   "jsnext:main": "src/index.js",
   "module": "src/index.js",
