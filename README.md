@@ -3,7 +3,7 @@
 [![Codecov](https://img.shields.io/codecov/c/github/JorgeBucaran/classcat/master.svg)](https://codecov.io/gh/JorgeBucaran/classcat)
 [![npm](https://img.shields.io/npm/v/classcat.svg)](https://www.npmjs.org/package/classcat)
 
-Classcat is a 0.3 KB JavaScript utility for conditionally concatenating CSS [class names](https://developer.mozilla.org/en-US/docs/Web/API/Element/className).
+Classcat is a 0.3 KB JavaScript function for conditionally concatenating CSS [class names](https://developer.mozilla.org/en-US/docs/Web/API/Element/className).
 
 [Try it Online](https://codepen.io/JorgeBucaran/pen/GMRjRB)
 
