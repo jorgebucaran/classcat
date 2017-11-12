@@ -50,7 +50,7 @@ Then with a module bundler like [Rollup](https://github.com/rollup/rollup) or [W
 import cc from "classcat"
 ```
 
-Or download the minified library from a [unpkg](https://unpkg.com/classcat@latest/dist/classcat.js) or [jsDelivr](https://cdn.jsdelivr.net/npm/classcat@latest/dist/classcat.js).
+Or download the minified library from [unpkg](https://unpkg.com/classcat@latest/dist/classcat.js) or [jsDelivr](https://cdn.jsdelivr.net/npm/classcat@latest/dist/classcat.js).
 
 ```html
 <script src="https://unpkg.com/classcat"></script>
@@ -60,7 +60,9 @@ Then find it on `window.classcat`.
 
 ## Usage
 
-Classcat joins all elements of an array or keys of an object into a string. If the value associated with a given key is falsy, the key will be ignored.
+Classcat is a unary function (accepts a single argument) expecting an array of elements or an object of keys and returns a string that is the result of joining all elements of the array or object keys.
+
+If the value associated with a given key is falsey, the key will be ignored.
 
 ```js
 cc([
@@ -72,7 +74,7 @@ cc([
 ]) // => btn btn-active
 ```
 
-Nested arrays or objects are supported too. Use this feature to assemble classes with a common prefix.
+If an object contains child elements, the parent key will be used as a prefix.
 
 ```js
 cc([
@@ -89,7 +91,8 @@ cc([
 
 ## Credits
 
-Classcat is inspired by [JedWatson/classNames](https://github.com/JedWatson/classnames) with support for nested objects and [better performance](/bench/README.md). It differs from classNames in that it does not accept [variable arguments](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/arguments).
+Classcat is inspired by [JedWatson/classNames](https://github.com/JedWatson/classnames) with support for nested objects and [better performance](/bench/README.md).
+The difference between classcat and classNames is that classNames accepts a [variable number of arguments](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/arguments), whereas classcat only accepts a single argument.
 
 ```js
 cc("foo", "bar", "baz") // => foo

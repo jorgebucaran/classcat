@@ -21,7 +21,7 @@ test("objects", () => {
   ).toBe("foo bar baz")
 })
 
-test("mix", () => {
+test("mixed", () => {
   const baz = "baz"
   expect(
     cc([
