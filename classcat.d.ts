@@ -1,4 +1,4 @@
-export as namespace classcat
+export as namespace Classcat
 
 export interface ClassSet {
   [key: string]: boolean | any | ClassSet
