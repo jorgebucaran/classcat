@@ -24,7 +24,7 @@
     "test": "jest --coverage --no-cache && tsc -p tests/ts",
     "build": "npm run bundle && npm run minify",
     "bundle": "rollup -i src/index.js -o dist/classcat.js -m -f umd -n classcat",
-    "minify": "uglifyjs dist/classcat.js -o dist/classcat.js --mangle --compress warnings=false --pure-funcs=Object.defineProperty -p relative --source-map dist/classcat.js.map",
+    "minify": "uglifyjs dist/classcat.js -o dist/classcat.js -mc pure_funcs=Object.defineProperty --source-map includeSources,url=classcat.js.map",
     "prepare": "npm run build",
     "format": "prettier --semi false --write 'src/**/*.js' '{,tests/ts/}*.ts'",
     "release": "npm run build && npm test && git commit -am $npm_package_version && git tag $npm_package_version && git push origin master && git push --tags && npm publish"
@@ -34,10 +34,10 @@
   },
   "devDependencies": {
     "babel-preset-env": "^1.6.1",
-    "jest": "^21.2.1",
-    "prettier": "~1.7.4",
-    "rollup": "^0.50.0",
-    "typescript": "^2.5.3",
-    "uglify-js": "^2.7.5"
+    "jest": "^22.0.4",
+    "prettier": "^1.9.2",
+    "rollup": "^0.53.3",
+    "typescript": "^2.6.2",
+    "uglify-js": "^3.3.4"
   }
 }
