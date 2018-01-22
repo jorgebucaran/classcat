@@ -5,7 +5,7 @@
 
 Classcat is a 0.3 KB JavaScript function for conditionally concatenating CSS [class names](https://developer.mozilla.org/en-US/docs/Web/API/Element/className).
 
-[Try it Online](https://codepen.io/JorgeBucaran/pen/GMRjRB)
+[Live Example](https://codepen.io/JorgeBucaran/pen/GMRjRB)
 
 ```js
 import cc from "classcat"
@@ -34,7 +34,8 @@ export function ToggleButton({ toggle, isOn }) {
 
 Classcat works in all browsers >= IE9 and you can use it with your favorite JavaScript UI library.
 
-[![Classcat](https://user-images.githubusercontent.com/56996/30416101-cda83bd4-9965-11e7-9db5-230ba3fc83fd.gif)](https://codepen.io/JorgeBucaran/full/GMRjRB/)
+[![Classcat](https://user-images.githubusercontent.com/56996/35211232-f0e23a70-ff98-11e7-8970-1aff845f3eb0.gif)
+](https://codepen.io/JorgeBucaran/full/GMRjRB/)
 
 ## Installation
 
@@ -50,13 +51,21 @@ Then with a module bundler like [Rollup](https://github.com/rollup/rollup) or [W
 import cc from "classcat"
 ```
 
-Or download the minified library from [unpkg](https://unpkg.com/classcat@latest/dist/classcat.js) or [jsDelivr](https://cdn.jsdelivr.net/npm/classcat@latest/dist/classcat.js).
+If you prefer not to use a build system, you can load Classcat from a CDN and it will be globally available through the `window.classcat` object.
 
 ```html
-<script src="https://unpkg.com/classcat"></script>
-```
+<!doctype html>
+<html>
+<body>
+  <script src="https://unpkg.com/classcat"></script>
+  <script>
 
-Then find it on `window.classcat`.
+  const cc = classcat
+
+  </script>
+</body>
+</html>
+```
 
 ## Usage
 
