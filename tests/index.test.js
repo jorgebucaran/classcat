@@ -43,9 +43,9 @@ test("prefix", () => {
         quux: false,
         baz: true
       },
-      "-"
+      "prefix-"
     )
-  ).toBe("foo-bar-baz")
+  ).toBe("prefix-foo prefix-bar prefix-baz")
 })
 
 test("deep", () => {
@@ -71,4 +71,16 @@ test("not owned props", () => {
   expect(cc({})).toBe("")
 
   delete Object.prototype.myFunction
+})
+
+test("all child elements false", () => {
+  expect(
+    cc([
+      {
+        foo: {
+          "--bar": false
+        }
+      }
+    ])
+  ).toBe("")
 })
