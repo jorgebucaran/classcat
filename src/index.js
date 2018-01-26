@@ -1,28 +1,22 @@
-export default function cc(classes, prefix) {
+export default function cc(classes) {
   var next
   var type = typeof classes
   var result = ""
 
-  prefix = prefix || ""
-
-  if (type === "boolean") {
-    return classes ? prefix : ""
-  }
-
   if (type === "string" || type === "number") {
-    return prefix + (classes || "")
+    return classes || ""
   }
 
   if (Array.isArray(classes) && classes.length > 0) {
     for (var i = 0, len = classes.length; i < len; i++) {
-      if ((next = cc(classes[i], prefix))) {
+      if ((next = cc(classes[i]))) {
         result += (result && " ") + next
       }
     }
-  } else if (type === "object") {
+  } else {
     for (var key in classes) {
-      if ((next = cc(classes[key], prefix + key))) {
-        result += (result && " ") + next
+      if (classes.hasOwnProperty(key) && classes[key]) {
+        result += (result && " ") + key
       }
     }
   }
