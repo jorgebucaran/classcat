@@ -54,17 +54,7 @@ import cc from "classcat"
 If you prefer not to use a build system, you can load Classcat from a CDN and it will be globally available through the `window.classcat` object.
 
 ```html
-<!doctype html>
-<html>
-<body>
-  <script src="https://unpkg.com/classcat"></script>
-  <script>
-
-  const cc = classcat
-
-  </script>
-</body>
-</html>
+<script src="//unpkg.com/classcat"></script>
 ```
 
 ## Usage
@@ -100,7 +90,7 @@ cc([
 
 ## Credits
 
-Classcat is inspired by [JedWatson/classNames](https://github.com/JedWatson/classnames) with support for nested objects and [better performance](/bench/README.md).
+Classcat is an alternative to [JedWatson/classNames](https://github.com/JedWatson/classnames) with support for nested objects and [superior performance](/bench/README.md).
 The difference between classcat and classNames is that classNames accepts a [variable number of arguments](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/arguments), whereas classcat only accepts a single argument.
 
 ```js
