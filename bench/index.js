@@ -12,9 +12,9 @@ require("./fixtures").map((fixed, index, { length }) => {
     )
     .on("complete", function() {
       console.log(
-        `Fastest is ${this.filter("fastest").map("name")}${index + 1 < length
-          ? "\n"
-          : ""}`
+        `Fastest is ${this.filter("fastest").map("name")}${
+          index + 1 < length ? "\n" : ""
+        }`
       )
     })
     .run()

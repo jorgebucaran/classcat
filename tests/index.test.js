@@ -1,6 +1,6 @@
 import cc from "../src"
 
-test("falsy", () => {
+test("falsey", () => {
   expect(cc({})).toBe("")
   expect(cc([])).toBe("")
   expect(cc(["", null, false, undefined, 0, NaN])).toBe("")
@@ -32,6 +32,21 @@ test("mixed", () => {
       }
     ])
   ).toBe("foo foo-bar foo-baz")
+})
+
+test("mixed #2", () => {
+  expect(
+    cc({
+      foo: {
+        "--bar": [
+          "--baz",
+          {
+            "--qux": true
+          }
+        ]
+      }
+    })
+  ).toEqual("foo--bar--baz foo--bar--qux")
 })
 
 test("prefix", () => {

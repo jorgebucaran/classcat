@@ -13,23 +13,23 @@ npm i && node .
 Please be aware that results may vary across browsers and Node.js runtimes. All tests run on a 2.4GHz Intel Core i7 CPU with 16 GB memory.
 
 <pre>
-<b>Classcat – Strings × 31,836,467 ops/sec</b>
-classNames – Strings × 3,751,299 ops/sec
+<p>Classcat – Strings × 20,162,778 ops/sec</p>
+classNames – Strings × 3,911,263 ops/sec
 Fastest is Classcat – Strings
 
-<b>Classcat – Objects × 6,385,707 ops/sec</b>
-classNames – Objects × 3,260,164 ops/sec
+<p>Classcat – Objects × 6,270,420 ops/sec</p>
+classNames – Objects × 3,294,519 ops/sec
 Fastest is Classcat – Objects
 
-<b>Classcat – Strings & Objects × 31,213,754 ops/sec</b>
-classNames – Strings & Objects × 3,000,682 ops/sec
+<p>Classcat – Strings & Objects × 19,211,576 ops/sec</p>
+classNames – Strings & Objects × 3,055,944 ops/sec
 Fastest is Classcat – Strings & Objects
 
-<b>Classcat – Mixed × 29,953,843 ops/sec</b>
-classNames – Mixed × 2,126,420 ops/sec
+<p>Classcat – Mixed × 7,062,106 ops/sec</p>
+classNames – Mixed × 2,145,534 ops/sec
 Fastest is Classcat – Mixed
 
-<b>Classcat – Arrays × 3,628,801 ops/sec</b>
-classNames – Arrays × 915,020 ops/sec
+<p>Classcat – Arrays × 2,381,984 ops/sec</p>
+classNames – Arrays × 951,920 ops/sec
 Fastest is Classcat – Arrays
 </pre>
