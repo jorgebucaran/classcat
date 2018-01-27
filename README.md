@@ -54,7 +54,7 @@ import cc from "classcat"
 If you prefer not to use a build system, you can load Classcat from a CDN and it will be globally available through the `window.classcat` object.
 
 ```html
-<script src="//unpkg.com/classcat"></script>
+<script src="https://unpkg.com/classcat"></script>
 ```
 
 ## Usage
