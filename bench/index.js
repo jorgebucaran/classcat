@@ -4,9 +4,11 @@ const cc = require("../")
 
 require("./fixtures").map((fixed, index, { length }) => {
   const suite = new Suite()
+  const args = fixed.args.length > 1 ? fixed.args : fixed.args[0];
+
   suite
-    .add(`Classcat – ${fixed.description}`, () => cc.apply({}, fixed.args))
-    .add(`classNames – ${fixed.description}`, () => cx.apply({}, fixed.args))
+    .add(`Classcat – ${fixed.description}`, () => cc(args))
+    .add(`classNames – ${fixed.description}`, fixed.args.length > 1 ? () => cx.apply(null, args) : () => cx(args))
     .on("cycle", ({ target: { name, hz, stats } }) =>
       console.log(`${name} × ${Math.floor(hz).toLocaleString()} ops/sec`)
     )
