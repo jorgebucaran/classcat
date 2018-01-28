@@ -5,7 +5,7 @@ const cc = require("../")
 require("./fixtures").map((fixed, index, { length }) => {
   const suite = new Suite()
   suite
-    .add(`Classcat – ${fixed.description}`, () => cc.apply({}, fixed.args))
+    .add(`Classcat – ${fixed.description}`, () => cc(fixed.args))
     .add(`classNames – ${fixed.description}`, () => cx.apply({}, fixed.args))
     .on("cycle", ({ target: { name, hz, stats } }) =>
       console.log(`${name} × ${Math.floor(hz).toLocaleString()} ops/sec`)

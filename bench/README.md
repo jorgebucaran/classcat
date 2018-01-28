@@ -1,6 +1,6 @@
 # Benchmarks
 
-[Classcat](../README.md) vs. [classNames](https://github.com/JedWatson/classnames) benchmarks.
+All benchmarks run on a 2.4GHz Intel Core i7 CPU with 16 GB memory. Please be aware that results may vary across browsers and Node.js runtimes.
 
 ## Run
 
@@ -10,26 +10,24 @@ npm i && node .
 
 ## Results
 
-Please be aware that results may vary across browsers and Node.js runtimes. All tests run on a 2.4GHz Intel Core i7 CPU with 16 GB memory.
-
 <pre>
-<p>Classcat – Strings × 20,162,778 ops/sec</p>
-classNames – Strings × 3,911,263 ops/sec
+<em>Classcat – Strings × 10,252,382 ops/sec</em>
+classNames – Strings × 3,874,925 ops/sec
 Fastest is Classcat – Strings
 
-<p>Classcat – Objects × 6,270,420 ops/sec</p>
-classNames – Objects × 3,294,519 ops/sec
+<em>Classcat – Objects × 7,156,248 ops/sec</em>
+classNames – Objects × 3,301,732 ops/sec
 Fastest is Classcat – Objects
 
-<p>Classcat – Strings & Objects × 19,211,576 ops/sec</p>
-classNames – Strings & Objects × 3,055,944 ops/sec
+<em>Classcat – Strings & Objects × 6,138,233 ops/sec</em>
+classNames – Strings & Objects × 3,060,083 ops/sec
 Fastest is Classcat – Strings & Objects
 
-<p>Classcat – Mixed × 7,062,106 ops/sec</p>
-classNames – Mixed × 2,145,534 ops/sec
+<em>Classcat – Mixed × 3,675,625 ops/sec</em>
+classNames – Mixed × 2,185,575 ops/sec
 Fastest is Classcat – Mixed
 
-<p>Classcat – Arrays × 2,381,984 ops/sec</p>
-classNames – Arrays × 951,920 ops/sec
+<em>Classcat – Arrays × 3,056,942 ops/sec</em>
+classNames – Arrays × 962,705 ops/sec
 Fastest is Classcat – Arrays
 </pre>
