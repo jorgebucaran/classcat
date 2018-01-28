@@ -1,10 +1,12 @@
 export as namespace Classcat
 
-export interface ClassSet {
-  [key: string]: boolean | any | ClassSet
+export interface ClassObject {
+  [key: string]: boolean | any
 }
 
-export type Class = string | number | ClassSet
+export interface ClassArray extends Array<Class> {}
+
+export type Class = string | number | ClassObject | ClassArray
 
 /**
  * Classcat is a unary function (accepts a single argument) expecting an array of elements or an object of keys and returns a string that is the result of joining all elements of the array or object keys.
@@ -12,5 +14,5 @@ export type Class = string | number | ClassSet
  * If the value associated with a given key is falsey, the key will be ignored.
  *
  * @param classes
-*/
-export default function(classes: Class | Class[]): string
+ */
+export default function(classes: Class): string
