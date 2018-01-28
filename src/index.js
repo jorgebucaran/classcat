@@ -1,7 +1,6 @@
 export default function cc(classes) {
-  var next
+  var out = ""
   var type = typeof classes
-  var result = ""
 
   if (type === "string" || type === "number") {
     return classes || ""
@@ -9,17 +8,18 @@ export default function cc(classes) {
 
   if (Array.isArray(classes) && classes.length > 0) {
     for (var i = 0, len = classes.length; i < len; i++) {
-      if ((next = cc(classes[i]))) {
-        result += (result && " ") + next
+      var next = cc(classes[i])
+      if (next) {
+        out += (out && " ") + next
       }
     }
   } else {
     for (var key in classes) {
       if (classes.hasOwnProperty(key) && classes[key]) {
-        result += (result && " ") + key
+        out += (out && " ") + key
       }
     }
   }
 
-  return result
+  return out
 }
