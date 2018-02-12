@@ -1,11 +1,10 @@
 # Classcat
-[![Travis CI](https://img.shields.io/travis/JorgeBucaran/classcat/master.svg)](https://travis-ci.org/JorgeBucaran/classcat)
-[![Codecov](https://img.shields.io/codecov/c/github/JorgeBucaran/classcat/master.svg)](https://codecov.io/gh/JorgeBucaran/classcat)
-[![npm](https://img.shields.io/npm/v/classcat.svg)](https://www.npmjs.org/package/classcat)
+
+[![Travis CI](https://img.shields.io/travis/JorgeBucaran/classcat/master.svg)](https://travis-ci.org/JorgeBucaran/classcat) [![Codecov](https://img.shields.io/codecov/c/github/JorgeBucaran/classcat/master.svg)](https://codecov.io/gh/JorgeBucaran/classcat) [![npm](https://img.shields.io/npm/v/classcat.svg)](https://www.npmjs.org/package/classcat)
 
 Classcat is a 0.3 KB JavaScript function for conditionally concatenating CSS [class names](https://developer.mozilla.org/en-US/docs/Web/API/Element/className).
 
-[Live Example](https://codepen.io/JorgeBucaran/pen/GMRjRB)
+Try it live [here](https://codepen.io/JorgeBucaran/pen/GMRjRB).
 
 ```js
 import cc from "classcat"
@@ -48,7 +47,7 @@ Then with a module bundler such as [Rollup](https://github.com/rollup/rollup) or
 import cc from "classcat"
 ```
 
-If you prefer not to use a build system, you can load Classcat from a CDN and it will be globally available through the `window.classcat` object.
+If you prefer not to use a build system, you can load Classcat from a CDN and it will be globally available through the <samp>window.classcat</samp> object.
 
 ```html
 <script src="https://unpkg.com/classcat"></script>
@@ -70,10 +69,9 @@ cc([
 ]) // => btn btn-active
 ```
 
-## Credits
+## Prior Art
 
-Classcat is a [faster](/bench/README.md) alternative to [JedWatson/classNames](https://github.com/JedWatson/classnames).
-The difference between classcat and classNames is that classNames accepts a [variable number of arguments](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/arguments), whereas classcat only accepts a single argument.
+Classcat is a [faster](/bench/README.md) alternative to [JedWatson/classNames](https://github.com/JedWatson/classnames). The difference between classcat and classNames is that classNames accepts a [variable number of arguments](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/arguments), whereas classcat only accepts a single argument.
 
 ```js
 cc("foo", "bar", "baz") // => foo
