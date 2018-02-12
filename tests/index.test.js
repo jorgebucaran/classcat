@@ -34,6 +34,17 @@ test("mixed", () => {
   ).toBe("foo foo-bar foo-baz")
 })
 
+test("nested", () => {
+  const baz = "baz"
+  expect(
+    cc([
+      ["foo"],
+      ["foo-bar", [], ["foo-baz"]],
+    ])
+  ).toBe("foo foo-bar foo-baz")
+})
+
+
 test("not owned props", () => {
   Object.prototype.myFunction = () => {}
 

@@ -1,25 +1,23 @@
-export default function cc(classes) {
-  var out = ""
+var buffer = []
+export default function cc(classes, nested) {
+  if (!nested) {
+    buffer.length = 0
+    cc(classes, true)
+    return buffer.join(" ")
+  }
   var type = typeof classes
 
   if (type === "string" || type === "number") {
-    return classes || ""
-  }
-
-  if (Array.isArray(classes) && classes.length > 0) {
-    for (var i = 0, len = classes.length; i < len; i++) {
-      var next = cc(classes[i])
-      if (next) {
-        out += (out && " ") + next
-      }
+    if (classes) buffer.push(classes)
+  } else if (Array.isArray(classes)) {
+    for (var i = 0; i < classes.length; i++) {
+      cc(classes[i], true)
     }
   } else {
     for (var key in classes) {
       if (classes.hasOwnProperty(key) && classes[key]) {
-        out += (out && " ") + key
+        buffer.push(key)
       }
     }
   }
-
-  return out
 }
