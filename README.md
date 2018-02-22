@@ -4,7 +4,7 @@
 
 Classcat is a 0.3 KB JavaScript function for conditionally concatenating CSS [class names](https://developer.mozilla.org/en-US/docs/Web/API/Element/className).
 
-Try it live [here](https://codepen.io/JorgeBucaran/pen/GMRjRB).
+[Try it live here](https://codepen.io/JorgeBucaran/pen/QvogzJ).
 
 ```js
 import cc from "classcat"
