@@ -1,10 +1,10 @@
 # Classcat
 
-[![Travis CI](https://img.shields.io/travis/JorgeBucaran/classcat/master.svg)](https://travis-ci.org/JorgeBucaran/classcat) [![Codecov](https://img.shields.io/codecov/c/github/JorgeBucaran/classcat/master.svg)](https://codecov.io/gh/JorgeBucaran/classcat) [![npm](https://img.shields.io/npm/v/classcat.svg)](https://www.npmjs.org/package/classcat)
+[![Travis CI](https://img.shields.io/travis/jorgebucaran/classcat/master.svg)](https://travis-ci.org/jorgebucaran/classcat) [![Codecov](https://img.shields.io/codecov/c/github/jorgebucaran/classcat/master.svg)](https://codecov.io/gh/jorgebucaran/classcat) [![npm](https://img.shields.io/npm/v/classcat.svg)](https://www.npmjs.org/package/classcat)
 
-Classcat is a 0.3 KB JavaScript function for conditionally concatenating CSS [class names](https://developer.mozilla.org/en-US/docs/Web/API/Element/className).
+Classcat is a 0.3 kB JavaScript function for conditionally concatenating CSS [class names](https://developer.mozilla.org/en-US/docs/Web/API/Element/className).
 
-[Try it live here](https://codepen.io/JorgeBucaran/pen/QvogzJ).
+[Try it live here](https://codepen.io/jorgebucaran/pen/QvogzJ).
 
 ```js
 import cc from "classcat"

@@ -1,13 +1,13 @@
 {
   "name": "classcat",
-  "description": "0.3 KB JavaScript function for conditionally concatenating CSS class names.",
+  "description": "0.3 kB JavaScript function for conditionally concatenating CSS class names.",
   "version": "3.0.1",
   "main": "dist/classcat.js",
   "jsnext:main": "src/index.js",
   "module": "src/index.js",
   "typings": "classcat.d.ts",
   "license": "MIT",
-  "repository": "JorgeBucaran/classcat",
+  "repository": "jorgebucaran/classcat",
   "files": [
     "src",
     "dist",
