@@ -45,7 +45,7 @@ export function ToggleButton({ toggle, isOn }) {
 }
 ```
 
-Classcat is a unary function (accepts a single argument) expecting an array of elements or an object of keys and returns a string that is the result of joining all elements of the array or object keys.
+Classcat is a unary function (accepts a single argument) expecting an array of elements or an object of key/value pairs and returns a string that is the result of joining all elements of the array or object keys.
 
 If the value associated with a given key is false or evaluates to false it will be ignored.
 
