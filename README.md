@@ -10,12 +10,6 @@ Classcat is a JavaScript function for conditionally concatenating CSS classes.
 npm i <a href="https://www.npmjs.com/package/classcat">classcat</a>
 </pre>
 
-Then with a module bundler like [Rollup](https://github.com/rollup/rollup) or [Webpack](https://github.com/webpack/webpack), use as you would anything else.
-
-```js
-import cc from "classcat"
-```
-
 Don't want to set up a build environment? Download Classcat from a CDN and it will be globally available through the `window.classcat` object. Classcat works in all browsers >= IE9.
 
 ```html
