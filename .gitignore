@@ -12,5 +12,5 @@ coverage
 node_modules
 .lock-wscript
 yarn.lock
-
+package-lock.json
 .DS_Store

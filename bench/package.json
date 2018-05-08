@@ -1,8 +1,7 @@
 {
-  "name": "classcat-benchmarks",
-  "version": "1.0.0",
   "private": true,
-  "description": "Classcat vs JedWatson/classnames benchmarks.",
+  "name": "classcat-benchmarks",
+  "description": "Classcat vs JedWatson/classNames benchmarks.",
   "main": "index.js",
   "scripts": {},
   "author": "Jorge Bucaran",

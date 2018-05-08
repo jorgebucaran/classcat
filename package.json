@@ -1,9 +1,8 @@
 {
   "name": "classcat",
-  "description": "0.3 kB JavaScript function for conditionally concatenating CSS class names.",
+  "description": "0.3 kB JavaScript function for conditionally concatenating CSS classes.",
   "version": "3.0.2",
   "main": "dist/classcat.js",
-  "jsnext:main": "src/index.js",
   "module": "src/index.js",
   "typings": "classcat.d.ts",
   "license": "MIT",
@@ -16,17 +15,18 @@
   "author": "Jorge Bucaran",
   "keywords": [
     "css",
-    "jsx",
-    "string",
-    "classname"
+    "class",
+    "classname",
+    "concat",
+    "string"
   ],
   "scripts": {
     "test": "jest --coverage --no-cache && tsc -p tests/ts",
     "build": "npm run bundle && npm run minify",
     "bundle": "rollup -i src/index.js -o dist/classcat.js -m -f umd -n classcat",
-    "minify": "uglifyjs dist/classcat.js -o dist/classcat.js -mc pure_funcs=Object.defineProperty --source-map includeSources,url=classcat.js.map",
+    "minify": "uglifyjs dist/classcat.js -o dist/classcat.js -mc pure_funcs=['Object.defineProperty'] --source-map includeSources,url=classcat.js.map",
     "prepare": "npm run build",
-    "format": "prettier --semi false --write 'src/**/*.js' '{,tests/ts/}*.ts'",
+    "bench": "npm run build && npm i --prefix bench && node bench",
     "release": "npm run build && npm test && git commit -am $npm_package_version && git tag $npm_package_version && git push origin master && git push --tags && npm publish"
   },
   "babel": {
@@ -34,10 +34,9 @@
   },
   "devDependencies": {
     "babel-preset-env": "^1.6.1",
-    "jest": "^22.2.2",
-    "prettier": "^1.10.2",
-    "rollup": "^0.55.5",
-    "typescript": "^2.7.1",
-    "uglify-js": "^3.3.10"
+    "jest": "^22.4.3",
+    "rollup": "^0.58.2",
+    "typescript": "^2.8.3",
+    "uglify-js": "^3.3.24"
   }
 }
