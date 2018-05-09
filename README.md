@@ -21,6 +21,7 @@ Don't want to set up a build environment? Download Classcat from a CDN and it wi
 Here is a button you can toggle on or off. Go ahead and [try it online](https://codepen.io/jorgebucaran/pen/NYgLwG).
 
 ```js
+import { h } from "hyperapp"
 import cc from "classcat"
 
 export function ToggleButton({ toggle, isOn }) {
