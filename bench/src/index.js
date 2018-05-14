@@ -1,8 +1,9 @@
-const { Suite } = require("benchmark")
-const cx = require("classnames")
-const cc = require("../")
+import { Suite } from "benchmark"
+import cx from "classnames"
+import cc from "../../src/index"
+import fixtures from "./fixtures"
 
-require("./fixtures").map((fixed, index, { length }) => {
+fixtures.map((fixed, index, { length }) => {
   const suite = new Suite()
   suite
     .add(`Classcat – ${fixed.description}`, () => cc(fixed.args))

@@ -1,12 +1,11 @@
 {
   "private": true,
-  "name": "classcat-benchmarks",
   "description": "Classcat vs JedWatson/classNames benchmarks.",
-  "main": "index.js",
-  "scripts": {},
-  "author": "Jorge Bucaran",
-  "license": "MIT",
+  "scripts": {
+    "start": "rollup -i src/index.js -o dist/index.js -f cjs -g benchmark,classnames && node dist/index.js"
+  },
   "devDependencies": {
+    "rollup": "0.58.2",
     "benchmark": "^2.1.4",
     "classnames": "*"
   }

@@ -1,4 +1,4 @@
-module.exports = [
+export default [
   {
     description: "Strings",
     args: ["one", "two", "three"],
