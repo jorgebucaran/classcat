@@ -16,7 +16,7 @@ export default function cc(classes) {
     return out
   }
   
-  const keys = Object.keys(classes)
+  const keys = Object.keys(classes || {})
   for (let i = 0; i < keys.length; i++) {
     const key = keys[i]
     if (classes[key]) {
