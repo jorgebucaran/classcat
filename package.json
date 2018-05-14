@@ -23,10 +23,10 @@
   "scripts": {
     "test": "jest --coverage --no-cache && tsc -p tests/ts",
     "build": "npm run bundle && npm run minify",
-    "bundle": "rollup -i src/index.js -o dist/classcat.js -m -f umd -n classcat",
+    "bundle": "rollup -i src/index.js -o dist/classcat.js -m -f iife -n classcat",
     "minify": "uglifyjs dist/classcat.js -o dist/classcat.js -mc pure_funcs=['Object.defineProperty'] --source-map includeSources,url=classcat.js.map",
     "prepare": "npm run build",
-    "bench": "npm run build && npm i --prefix bench && node bench",
+    "bench": "npm run build && npm i --prefix bench && npm run start --prefix bench",
     "release": "npm run build && npm test && git commit -am $npm_package_version && git tag $npm_package_version && git push origin master && git push --tags && npm publish"
   },
   "babel": {
