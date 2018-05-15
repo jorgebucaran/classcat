@@ -5,7 +5,7 @@
     "start": "rollup -i src/index.js -o dist/index.js -f cjs -g benchmark,classnames && node dist/index.js"
   },
   "devDependencies": {
-    "rollup": "0.58.2",
+    "rollup": "0.59.0",
     "benchmark": "^2.1.4",
     "classnames": "*"
   }

@@ -23,7 +23,7 @@
   "scripts": {
     "test": "jest --coverage --no-cache && tsc -p tests/ts",
     "build": "npm run bundle && npm run minify",
-    "bundle": "rollup -i src/index.js -o dist/classcat.js -m -f iife -n classcat",
+    "bundle": "rollup -i src/index.js -o dist/classcat.js -m -f umd -n classcat",
     "minify": "uglifyjs dist/classcat.js -o dist/classcat.js -mc pure_funcs=['Object.defineProperty'] --source-map includeSources,url=classcat.js.map",
     "prepare": "npm run build",
     "bench": "npm run build && npm i --prefix bench && npm run start --prefix bench",
@@ -35,7 +35,7 @@
   "devDependencies": {
     "babel-preset-env": "^1.7.0",
     "jest": "^22.4.3",
-    "rollup": "^0.58.2",
+    "rollup": "^0.59.0",
     "typescript": "^2.8.3",
     "uglify-js": "^3.3.25"
   }
