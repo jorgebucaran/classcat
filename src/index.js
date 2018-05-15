@@ -21,7 +21,7 @@ export default function cc(classes) {
     }
 
     for (var key in classes) {
-      if (classes[key]) {
+      if (classes.hasOwnProperty(key) && classes[key]) {
         out += (out && " ") + key
       }
     }
