@@ -1,4 +1,4 @@
-import cc from "../src"
+import cc from "../src/index.js"
 
 test("falsey", () => {
   expect(cc({})).toBe("")
@@ -38,6 +38,9 @@ test("mixed", () => {
   ).toBe("foo foo-bar foo-baz")
 })
 
+test('nested arrays', () => {
+  expect(cc(["foo", ["bar"], [["foo2", ["bar2"]]]])).toBe("foo bar foo2 bar2")
+})
 test("not owned props", () => {
   Object.prototype.myFunction = () => {}
 
