@@ -10,6 +10,10 @@ test("arrays", () => {
   expect(cc(["foo", "bar", false, "baz"])).toBe("foo bar baz")
 })
 
+test("array with length 1", () => {
+  expect(cc(['foo'])).toBe('foo');
+});
+
 test("objects", () => {
   expect(
     cc({
@@ -41,3 +45,16 @@ test("not owned props", () => {
 
   delete Object.prototype.myFunction
 })
+
+test('Just a string', () => {
+  expect(cc('foo')).toBe('foo');
+});
+
+test('Just a number', () => {
+  expect(cc(21)).toBe('21');
+});
+
+test('Pass through falsy string but not 0', () => {
+  expect(cc('')).toBe('');
+  expect(cc(0)).toBe('0');
+});

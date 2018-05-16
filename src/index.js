@@ -2,8 +2,11 @@ export default function cc(classes) {
   var out = ""
 
   if (Array.isArray(classes)) {
-    if (classes.length > 1) {
-      for (var i = 0, len = classes.length; i < len; i++) {
+    if (classes.length > 0) {
+      var i = 0;
+      var len = classes.length;
+
+      for (; i < len; i++) {
         var t = typeof classes[i];
 
         var next = t !== 'string' && t !== 'number' ? cc(classes[i]) : classes[i]
@@ -16,8 +19,10 @@ export default function cc(classes) {
   } else {
     var type = typeof classes
 
-    if (type === "string" || type === "number") {
-      return classes || ""
+    if (type === "string") {
+      return classes || "";
+    } else if(type === "number") {
+      return ""+classes;
     }
 
     for (var key in classes) {
