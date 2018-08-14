@@ -48,7 +48,7 @@ cc([
 
 Here is an example with a button that can be toggled on or off. Go ahead and [try it online](https://codepen.io/jorgebucaran/pen/NYgLwG?editors=0010).
 
-```js
+```jsx
 import cc from "classcat"
 
 export function ToggleButton({ toggle, isOn }) {
