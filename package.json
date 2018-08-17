@@ -1,6 +1,6 @@
 {
   "name": "classcat",
-  "description": "JavaScript function for conditionally concatenating CSS classes.",
+  "description": "JavaScript function for concatenating CSS classes conditionally.",
   "version": "3.1.2",
   "main": "dist/classcat.js",
   "module": "src/index.js",
@@ -21,7 +21,7 @@
     "string"
   ],
   "scripts": {
-    "test": "jest --coverage --no-cache && tsc -p tests/ts",
+    "test": "nyc -i esm -r lcov testmatrix test/*.test.js && nyc report && tsc -p test/ts",
     "build": "npm run bundle && npm run minify",
     "bundle": "rollup -i src/index.js -o dist/classcat.js -m -f umd -n classcat",
     "minify": "uglifyjs dist/classcat.js -o dist/classcat.js -mc pure_funcs=['Object.defineProperty'] --source-map includeSources,url=classcat.js.map",
@@ -33,10 +33,11 @@
     "presets": "env"
   },
   "devDependencies": {
-    "babel-preset-env": "^1.7.0",
-    "jest": "^22.4.3",
-    "rollup": "^0.59.0",
-    "typescript": "^2.8.3",
-    "uglify-js": "^3.3.25"
+    "esm": "^3.0.77",
+    "nyc": "12.0.2",
+    "testmatrix": "0.1.2",
+    "rollup": "^0.64.1",
+    "typescript": "^3.0.1",
+    "uglify-js": "^3.4.7"
   }
 }
