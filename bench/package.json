@@ -1,11 +1,10 @@
 {
   "private": true,
-  "description": "Classcat vs JedWatson/classNames benchmarks.",
   "scripts": {
     "start": "rollup -i src/index.js -o dist/index.js -f cjs -g benchmark,classnames && node dist/index.js"
   },
   "devDependencies": {
-    "rollup": "0.59.0",
+    "rollup": "0.64.1",
     "benchmark": "^2.1.4",
     "classnames": "*"
   }
