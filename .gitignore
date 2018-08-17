@@ -1,16 +1,21 @@
-logs
-*.log
+# IDE
+.idea
+.vscode
 
-# Runtime data
-pids
-*.pid
-*.seed
-
-dist
-lib-cov
-coverage
-node_modules
-.lock-wscript
+# Logs
+*.log*
 yarn.lock
 package-lock.json
+
+# Coverage
+coverage
+.nyc_output
+
+# Misc
+node_modules
+*.xml
 .DS_Store
+
+# Dist
+*.gz
+dist

@@ -1,12 +1,10 @@
 {
   "compilerOptions": {
     "target": "es6",
-    "strict": true,
-    "noEmit": true,
     "baseUrl": "../..",
     "paths": {
       "classcat": ["src", "classcat.d.ts"]
-    }
-  },
-  "include": ["*.ts", "**/*.ts"]
+    },
+    "noEmit": true
+  }
 }
