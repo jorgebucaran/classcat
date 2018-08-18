@@ -1,7 +1,7 @@
 {
   "name": "classcat",
   "description": "JavaScript function to concatenate classNames declaratively.",
-  "version": "3.2.0",
+  "version": "3.2.1",
   "main": "dist/classcat.js",
   "module": "src/index.js",
   "typings": "classcat.d.ts",
