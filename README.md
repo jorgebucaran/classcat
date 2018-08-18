@@ -10,7 +10,7 @@ Classcat is a JavaScript function to concatenate classNames declaratively.
 npm i <a href="https://www.npmjs.com/package/classcat">classcat</a>
 </pre>
 
-Don't want to set up a build environment? Download Classcat from a CDN and it will be globally available through the `window.classcat` object. Classcat works in all browsers >= IE9.
+Don't want to set up a build environment? Download classcat from a CDN and it will be globally available through the `window.classcat` object. Classcat works in all browsers >= IE9.
 
 ```html
 <script src="https://unpkg.com/classcat"></script>

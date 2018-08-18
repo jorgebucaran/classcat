@@ -1,7 +1,7 @@
 {
   "name": "classcat",
   "description": "JavaScript function to concatenate classNames declaratively.",
-  "version": "3.1.2",
+  "version": "3.2.0",
   "main": "dist/classcat.js",
   "module": "src/index.js",
   "typings": "classcat.d.ts",
@@ -14,11 +14,9 @@
   ],
   "author": "Jorge Bucaran",
   "keywords": [
-    "css",
-    "class",
-    "classname",
-    "concat",
-    "string"
+    "classcat",
+    "classnames",
+    "concat"
   ],
   "scripts": {
     "test": "nyc -i esm -r lcov testmatrix test/*.test.js && nyc report && tsc -p test/ts",
