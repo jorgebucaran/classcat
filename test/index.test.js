@@ -4,27 +4,27 @@ import { equal } from "testmatrix"
 export default {
   classcat: [
     {
-      name: "an empty object",
+      name: "empty object",
       class: {},
       expected: ""
     },
     {
-      name: "an empty array",
+      name: "empty array",
       class: [],
       expected: ""
     },
     {
-      name: "falsey arguments",
+      name: "falsy arguments",
       class: ["", null, false, undefined, 0, NaN],
       expected: ""
     },
     {
-      name: "an array of classnames",
+      name: "array of class names",
       class: ["foo", "bar", false, "baz"],
       expected: "foo bar baz"
     },
     {
-      name: "an object of classnames",
+      name: "object of class names",
       class: {
         foo: true,
         bar: true,
@@ -34,15 +34,16 @@ export default {
       expected: "foo bar baz"
     },
     {
-      name: "an array of objects and arrays",
+      name: "array of objects and arrays",
       class: [
         "foo",
         "foo-bar",
         {
           "foo-baz": true
-        }
+        },
+        ["fum", "bam", "pow"]
       ],
-      expected: "foo foo-bar foo-baz"
+      expected: "foo foo-bar foo-baz fum bam pow"
     }
   ]
     .map(({ name, class: c, expected }) => ({
