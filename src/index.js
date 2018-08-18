@@ -1,12 +1,12 @@
 var isArray = Array.isArray
 
 export default function cc(cls) {
-  var i
-  var len
-  var key
-  var out = ""
-  var type = typeof cls
-  var next
+  var i,
+    len,
+    key,
+    out = "",
+    type = typeof cls,
+    next
 
   if (type === "string" || type === "number") return cls || ""
 
