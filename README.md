@@ -2,7 +2,7 @@
 
 [![CI](https://img.shields.io/travis/jorgebucaran/classcat/master.svg)](https://travis-ci.org/jorgebucaran/classcat) [![Codecov](https://img.shields.io/codecov/c/github/jorgebucaran/classcat/master.svg)](https://codecov.io/gh/jorgebucaran/classcat) [![npm](https://img.shields.io/npm/v/classcat.svg)](https://www.npmjs.org/package/classcat)
 
-Classcat is a JavaScript utility function for concatenating CSS classes conditionally.
+Classcat is a JavaScript function to concatenate classNames declaratively.
 
 ## Installation
 
@@ -18,17 +18,19 @@ Don't want to set up a build environment? Download Classcat from a CDN and it wi
 
 ## Usage
 
-Classcat is a unary function (accepts a single argument) expecting an array of elements or an object of key/value pairs and returns a string that is the result of joining all elements of the array or object keys.
+Classcat is a unary function expecting an array of elements _or_ an object of key/value pairs and returns a string that is the result of joining all the elements in the array or object keys.
 
 ```js
 import cc from "classcat"
 
 cc(["foo", "bar"]) //=> "foo bar"
+
 cc(["foo", { bar: true }]) //=> "foo bar"
+
 cc(["foo", { bar: true, fum: false }, "baz"]) //=> "foo bar baz"
 ```
 
-If an element or key's value is false or evaluates to false it will be ignored.
+[Falsy](https://developer.mozilla.org/en-US/docs/Glossary/Falsy) array elements and object properties will be ignored.
 
 ```js
 import cc from "classcat"
@@ -46,7 +48,7 @@ cc([
 ]) //=> "foo 1"
 ```
 
-Here is an example with a button that can be toggled on or off. Go ahead and [try it online](https://codepen.io/jorgebucaran/pen/NYgLwG?editors=0010).
+Here is an example styling a button that can be toggled on or off. Go ahead and [try it online](https://codepen.io/jorgebucaran/pen/NYgLwG?editors=0010).
 
 ```jsx
 import cc from "classcat"
@@ -77,29 +79,29 @@ npm run bench
 
 <pre>
 # Strings
-classnames × 4,251,336 ops/sec
-<em>classcat × 15,182,201 ops/sec</em>
+classnames × 3,187,131 ops/sec
+<em>classcat × 15,132,350 ops/sec</em>
 
 # Objects
-classnames × 4,509,972 ops/sec
-<em>classcat × 20,418,846 ops/sec</em>
+classnames × 3,314,869 ops/sec
+<em>classcat × 20,206,909 ops/sec</em>
 
 # Strings & Objects
-classnames × 3,895,514 ops/sec
-<em>classcat × 11,423,799 ops/sec</em>
-
-# Mixed
-classnames × 2,941,495 ops/sec
-<em>classcat × 6,344,310 ops/sec</em>
+classnames × 2,937,509 ops/sec
+<em>classcat × 11,734,207 ops/sec</em>
 
 # Arrays
-classnames × 999,926 ops/sec
-<em>classcat × 3,680,937 ops/sec</em>
+classnames × 903,155 ops/sec
+<em>classcat × 4,270,378 ops/sec</em>
+
+# Arrays & Objects
+classnames × 2,342,018 ops/sec
+<em>classcat × 5,083,398 ops/sec</em>
 </pre>
 
 ## Comparisons
 
-Classcat operates similarly to JedWatson/classNames. One difference is that classNames takes a [variable number of arguments](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/arguments) whereas Classcat takes a single argument.
+Classcat operates similarly to JedWatson/classNames. The only difference is that classNames takes a [variable number of arguments](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/arguments) whereas classcat takes a single argument.
 
 ```js
 cc("foo", "bar", "baz") //=> "foo"

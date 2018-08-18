@@ -1,34 +1,72 @@
-import { Suite } from "benchmark"
-import cx from "classnames"
-import cc from "../../src/index"
-import fixtures from "./fixtures"
+import classcat from "../../src/index"
+import classnames from "classnames"
+import { runBenchmark } from "./runBenchmark"
 
-const bench = ({ testables, tests }) =>
-  Object.keys(tests)
-    .map(name => ({
-      name,
-      test: Object.keys(testables).reduce(
-        (bench, id) => bench.add(id, tests[name].bind({}, testables[id])),
-        new Suite().on("cycle", ({ target: { name, hz } }) =>
-          console.log(`${name} × ${Math.floor(hz).toLocaleString()} ops/sec`)
-        )
-      )
-    }))
-    .map(({ name, test }, i) => {
-      console.log(`${i > 0 ? "\n" : ""}# ${name}`)
-      test.run()
-    })
-
-bench({
-  testables: {
-    classnames: args => cx.apply({}, args),
-    classcat: cc
-  },
-  tests: fixtures.reduce(
-    (tests, { description, args, expected }) => ({
-      ...tests,
-      [description]: c => c(args)
+runBenchmark(
+  [
+    {
+      name: "# Strings",
+      args: ["one", "two", "three"]
+    },
+    {
+      name: "# Objects",
+      args: [
+        {
+          one: true,
+          two: true,
+          three: false
+        }
+      ]
+    },
+    {
+      name: "# Strings & Objects",
+      args: [
+        "one",
+        "two",
+        {
+          four: true,
+          three: false
+        }
+      ]
+    },
+    {
+      name: "# Arrays",
+      args: [
+        ["one", "two"],
+        ["three"],
+        ["four", ["five"]],
+        [
+          {
+            six: true
+          },
+          {
+            seven: false
+          }
+        ]
+      ]
+    },
+    {
+      name: "# Arrays & Objects",
+      args: [
+        "one",
+        {
+          two: true,
+          three: false
+        },
+        {
+          four: "foo",
+          five: true
+        },
+        6,
+        {}
+      ]
+    }
+  ].reduce(
+    (t, { name, args }) => ({
+      ...t,
+      [name]: c => c(args)
     }),
     {}
-  )
-})
+  ),
+  { classnames, classcat }
+)
