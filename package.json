@@ -1,6 +1,6 @@
 {
   "name": "classcat",
-  "description": "JavaScript function for concatenating CSS classes conditionally.",
+  "description": "JavaScript function to concatenate classNames declaratively.",
   "version": "3.1.2",
   "main": "dist/classcat.js",
   "module": "src/index.js",
