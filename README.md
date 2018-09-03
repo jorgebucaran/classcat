@@ -70,13 +70,7 @@ cc(["foo", ["bar", { baz: true, bam: false }]]) //=> "foo bar baz"
 cc("foo", "bar", "baz") //=> "foo"
 ```
 
-Assign the result to the className property of an element directly.
-
-```jsx
-mySpan.className = cc({ textOff: !isOn })
-```
-
-Or the class attribute of an element created with your favorite view framework.
+Use to set the class/className of an element created with your chosen view framework.
 
 ```jsx
 const popupView = popup => (
