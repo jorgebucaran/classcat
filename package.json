@@ -1,6 +1,6 @@
 {
   "name": "classcat",
-  "description": "JavaScript function to concatenate classNames declaratively.",
+  "description": "Declarative string builder for DOM className properties.",
   "version": "3.2.1",
   "main": "dist/classcat.js",
   "module": "src/index.js",
@@ -14,8 +14,11 @@
   ],
   "author": "Jorge Bucaran",
   "keywords": [
+    "class",
     "classcat",
-    "classnames",
+    "classname",
+    "attribute",
+    "classlist",
     "concat"
   ],
   "scripts": {
@@ -24,11 +27,7 @@
     "bundle": "rollup -i src/index.js -o dist/classcat.js -m -f umd -n classcat",
     "minify": "uglifyjs dist/classcat.js -o dist/classcat.js -mc pure_funcs=['Object.defineProperty'] --source-map includeSources,url=classcat.js.map",
     "prepare": "npm run build",
-    "bench": "npm run build && npm i --prefix bench && npm run start --prefix bench",
     "release": "npm run build && npm test && git commit -am $npm_package_version && git tag $npm_package_version && git push origin master && git push --tags && npm publish"
-  },
-  "babel": {
-    "presets": "env"
   },
   "devDependencies": {
     "esm": "^3.0.77",
