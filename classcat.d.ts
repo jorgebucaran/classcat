@@ -9,10 +9,8 @@ export interface ClassArray extends Array<Class> {}
 export type Class = string | number | ClassObject | ClassArray
 
 /**
- * Classcat is a unary function expecting an array of elements _or_ an object of key/value pairs and returns a string that is the result of joining all the elements in the array or object keys.
+ * A number, string, object or array. Objects consist of className/value pairs. Arrays are recursively reduced, therefore elements can be of any type aforementioned. [Truthy](https://developer.mozilla.org/en-US/docs/Glossary/Truthy) values are added to the output, [falsy](https://developer.mozilla.org/en-US/docs/Glossary/Falsy) values are ignored.
  *
- * [Falsy](https://developer.mozilla.org/en-US/docs/Glossary/Falsy) array elements and object properties will be ignored.
- *
- * @param classNames
+ * @param names
  */
-export default function(classNames: Class): string
+export default function(names: Class): string
