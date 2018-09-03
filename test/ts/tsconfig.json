@@ -3,7 +3,7 @@
     "target": "es6",
     "baseUrl": "../..",
     "paths": {
-      "classcat": ["src", "classcat.d.ts"]
+      "classcat": ["classcat.js", "classcat.d.ts"]
     },
     "noEmit": true
   }
