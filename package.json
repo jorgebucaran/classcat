@@ -1,7 +1,7 @@
 {
   "name": "classcat",
   "description": "Declarative string builder for DOM className properties.",
-  "version": "3.2.1",
+  "version": "3.2.2",
   "main": "dist/classcat.js",
   "module": "src/index.js",
   "typings": "classcat.d.ts",
