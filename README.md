@@ -2,7 +2,33 @@
 
 [![CI](https://img.shields.io/travis/jorgebucaran/classcat/master.svg)](https://travis-ci.org/jorgebucaran/classcat) [![Codecov](https://img.shields.io/codecov/c/github/jorgebucaran/classcat/master.svg)](https://codecov.io/gh/jorgebucaran/classcat) [![npm](https://img.shields.io/npm/v/classcat.svg)](https://www.npmjs.org/package/classcat)
 
-Classcat is a JavaScript function to concatenate classNames declaratively.
+Classcat is a declarative string builder for DOM [className](https://developer.mozilla.org/en-US/docs/Web/API/Element/className) properties.
+
+Each class can be conditionally added and removed depending on the falsiness of the value it is paired with. Here is a button you can toggle on and off. Go ahead and [try it online](https://codepen.io/jorgebucaran/pen/NYgLwG?editors=0010).
+
+```jsx
+import cc from "classcat"
+
+export const ToggleButton = ({ isOn }) => (
+  <div class="btn">
+    <div
+      class={cc({
+        circle: true,
+        off: !isOn,
+        on: isOn
+      })}
+    />
+    <span class={cc({ textOff: !isOn })}>{isOn ? "ON" : "OFF"}</span>
+  </div>
+)
+```
+
+## Features
+
+- Tiny ([294B](https://bundlephobia.com/result?p=classcat))
+- Zero dependency
+- 5x [faster](#benchmark-results) drop-in replacement for JedWatson/classNames
+- Framework agnostic—use with React, Preact, Hyperapp, your choice!
 
 ## Installation
 
@@ -18,63 +44,72 @@ Don't want to set up a build environment? Download classcat from a CDN and it wi
 
 ## Usage
 
-Classcat is a unary function expecting an array of elements _or_ an object of key/value pairs and returns a string that is the result of joining all the elements in the array or object keys.
-
-```js
-import cc from "classcat"
-
-cc(["foo", "bar"]) //=> "foo bar"
-
-cc(["foo", { bar: true }]) //=> "foo bar"
-
-cc(["foo", { bar: true, fum: false }, "baz"]) //=> "foo bar baz"
-```
-
-[Falsy](https://developer.mozilla.org/en-US/docs/Glossary/Falsy) array elements and object properties will be ignored.
-
-```js
-import cc from "classcat"
-
-cc([
-  null,
-  false,
-  "foo",
-  undefined,
-  0,
-  1,
-  {
-    bar: null
-  }
-]) //=> "foo 1"
-```
-
-Here is an example styling a button that can be toggled on or off. Go ahead and [try it online](https://codepen.io/jorgebucaran/pen/NYgLwG?editors=0010).
+Classcat expects an array of elements _or_ an object of key/value pairs and joins all the elements in the array and object keys. [Falsy](https://developer.mozilla.org/en-US/docs/Glossary/Falsy) array elements and object properties will be ignored. Single string or number values need not be in an array.
 
 ```jsx
 import cc from "classcat"
 
-export function ToggleButton({ toggle, isOn }) {
-  return (
-    <div class="btn" onclick={toggle}>
-      <div
-        class={cc({
-          circle: true,
-          off: !isOn,
-          on: isOn
-        })}
-      />
-      <span class={cc({ textOff: !isOn })}>{isOn ? "ON" : "OFF"}</span>
-    </div>
-  )
-}
+cc("foo") //=> "foo"
+
+cc({ foo: true, bar: false }) //=> "foo"
+
+cc([{ foo: true, bar: false }, "baz"]) //=> "foo baz"
+
+cc([null, { foo: true, bar: false }, "baz", 0, undefined]) //=> "foo baz"
 ```
 
-## Benchmarks
+Arrays will be recursively flattened as per the rules above.
 
-All benchmarks run on a 2.4GHz Intel Core i7 CPU with 16 GB memory. Please be aware that results may vary across browsers and Node.js runtimes.
+```jsx
+cc(["foo", ["bar", { baz: true, bam: false }]]) //=> "foo bar baz"
+```
+
+[Variable number of arguments](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/arguments) are not supported. Wrap multiple arguments in an array.
+
+```js
+cc("foo", "bar", "baz") //=> "foo"
+```
+
+Assign the result to the className property of an element directly.
+
+```jsx
+mySpan.className = cc({ textOff: !isOn })
+```
+
+Or the class attribute of an element created with your favorite view framework.
+
+```jsx
+const popupView = popup => (
+  <div
+    class={cc({
+      popup: true,
+      "popup-important": popup.isImportant,
+      "popup-seen": popup.isSeen
+    })}
+  >
+    {popup.content}
+  </div>
+)
+```
+
+## API
+
+### default(names)
+
+#### names
+
+A number, string, object or array. Objects consist of className/value pairs. Arrays are recursively reduced, therefore elements can be of any type aforementioned. Truthy values are added to the output, falsy values are ignored.
+
+```js
+cc(["foo", "bar", { baz: true, bam: false }, undefined]) //=> "foo bar baz"
+```
+
+## Benchmark Results
+
+All benchmarks run on a 2.4GHz Intel Core i7 CPU with 16 GB memory.
 
 ```
-npm run bench
+npm run build && npm i -C bench && npm -C bench start
 ```
 
 <pre>
@@ -98,20 +133,6 @@ classnames × 903,155 ops/sec
 classnames × 2,342,018 ops/sec
 <em>classcat × 5,083,398 ops/sec</em>
 </pre>
-
-## Comparisons
-
-Classcat operates similarly to JedWatson/classNames. The only difference is that classNames takes a [variable number of arguments](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/arguments) whereas classcat takes a single argument.
-
-```js
-cc("foo", "bar", "baz") //=> "foo"
-```
-
-To work around this, wrap the arguments inside an array.
-
-```js
-cc(["foo", "bar", "baz"]) //=> "foo bar baz"
-```
 
 ## License
 
