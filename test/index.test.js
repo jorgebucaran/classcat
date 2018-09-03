@@ -24,6 +24,11 @@ export default {
       expected: "foo bar baz"
     },
     {
+      name: "array of arrays",
+      class: ["foo", ["bar", [false, "baz"]]],
+      expected: "foo bar baz"
+    },
+    {
       name: "object of class names",
       class: {
         foo: true,
