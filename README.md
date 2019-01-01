@@ -25,10 +25,10 @@ export const ToggleButton = ({ isOn }) => (
 
 ## Features
 
-- Tiny ([294B](https://bundlephobia.com/result?p=classcat))
+- Tiny ([300B](https://bundlephobia.com/result?p=classcat))
 - Zero dependency
 - 5x [faster](#benchmark-results) drop-in replacement for JedWatson/classNames
-- Framework agnostic—use with React, Preact, Hyperapp, your choice!
+- Framework agnostic—use with React, Preact, Hyperapp—your choice!
 
 ## Installation
 
@@ -108,24 +108,29 @@ npm run build && npm i -C bench && npm -C bench start
 
 <pre>
 # Strings
-classnames × 3,187,131 ops/sec
-<em>classcat × 15,132,350 ops/sec</em>
+cclasscat × 15,009,674 ops/sec</em>
+classnames × 3,191,312 ops/sec
+clsx × 2,563,378 ops/sec
 
 # Objects
-classnames × 3,314,869 ops/sec
-<em>classcat × 20,206,909 ops/sec</em>
+<em>classcat × 20,053,517 ops/sec</em>
+classnames × 3,479,564 ops/sec
+clsx × 2,509,453 ops/sec
 
 # Strings & Objects
-classnames × 2,937,509 ops/sec
-<em>classcat × 11,734,207 ops/sec</em>
+<em>classcat × 11,317,394 ops/sec</em>
+classnames × 3,006,549 ops/sec
+clsx × 2,100,306 ops/sec
 
 # Arrays
-classnames × 903,155 ops/sec
-<em>classcat × 4,270,378 ops/sec</em>
+<em>classcat × 4,142,953 ops/sec</em>
+classnames × 986,519 ops/sec
+clsx × 531,326 ops/sec
 
 # Arrays & Objects
-classnames × 2,342,018 ops/sec
-<em>classcat × 5,083,398 ops/sec</em>
+<em>classcat × 4,892,534 ops/sec</em>
+classnames × 2,354,448 ops/sec
+clsx × 1,194,463 ops/sec
 </pre>
 
 ## License

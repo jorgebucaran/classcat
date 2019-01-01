@@ -1,5 +1,6 @@
 import classcat from "../../src/index"
 import classnames from "classnames"
+import clsx from "clsx"
 import { runBenchmark } from "./runBenchmark"
 
 runBenchmark(
@@ -68,5 +69,5 @@ runBenchmark(
     }),
     {}
   ),
-  { classnames, classcat }
+  { classcat, classnames, clsx }
 )
