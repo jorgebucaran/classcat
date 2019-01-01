@@ -28,7 +28,7 @@ export const ToggleButton = ({ isOn }) => (
 - Tiny ([300B](https://bundlephobia.com/result?p=classcat))
 - Zero dependency
 - 5x [faster](#benchmark-results) drop-in replacement for JedWatson/classNames
-- Framework agnostic—use with React, Preact, Hyperapp—your choice!
+- Framework agnostic — use with React, Preact, Hyperapp — your choice!
 
 ## Installation
 
@@ -108,7 +108,7 @@ npm run build && npm i -C bench && npm -C bench start
 
 <pre>
 # Strings
-cclasscat × 15,009,674 ops/sec</em>
+<em>classcat × 15,009,674 ops/sec</em>
 classnames × 3,191,312 ops/sec
 clsx × 2,563,378 ops/sec
 
