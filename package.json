@@ -25,16 +25,16 @@
     "test": "nyc -i esm -r lcov testmatrix test/*.test.js && nyc report && tsc -p test/ts",
     "build": "npm run bundle && npm run minify",
     "bundle": "rollup -i src/index.js -o dist/classcat.js -m -f umd -n classcat",
-    "minify": "uglifyjs dist/classcat.js -o dist/classcat.js -mc pure_funcs=['Object.defineProperty'] --source-map includeSources,url=classcat.js.map",
+    "minify": "terser dist/classcat.js -o dist/classcat.js -mc pure_funcs=['Object.defineProperty'] --source-map includeSources,url=classcat.js.map",
     "prepare": "npm run build",
     "release": "npm run build && npm test && git commit -am $npm_package_version && git tag $npm_package_version && git push origin master && git push --tags && npm publish"
   },
   "devDependencies": {
-    "esm": "^3.0.81",
-    "nyc": "13.0.1",
+    "esm": "^3.0.84",
+    "nyc": "13.1.0",
     "testmatrix": "0.1.2",
-    "rollup": "^0.65.0",
-    "typescript": "^3.0.3",
-    "uglify-js": "^3.4.9"
+    "rollup": "^1.0.0",
+    "typescript": "^3.2.2",
+    "terser": "^3.14.0"
   }
 }
