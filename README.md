@@ -2,7 +2,7 @@
 
 [![CI](https://img.shields.io/travis/jorgebucaran/classcat/master.svg)](https://travis-ci.org/jorgebucaran/classcat) [![Codecov](https://img.shields.io/codecov/c/github/jorgebucaran/classcat/master.svg)](https://codecov.io/gh/jorgebucaran/classcat) [![npm](https://img.shields.io/npm/v/classcat.svg)](https://www.npmjs.org/package/classcat)
 
-Classcat is a declarative string builder for DOM [className](https://developer.mozilla.org/en-US/docs/Web/API/Element/className) properties.
+Classcat is a declarative string builder specialized for DOM [`className`](https://developer.mozilla.org/en-US/docs/Web/API/Element/className) properties. 
 
 Each class can be conditionally added and removed depending on the falsiness of the value it is paired with. Here is a button you can toggle on and off. Go ahead and [try it online](https://codepen.io/jorgebucaran/pen/NYgLwG?editors=0010).
 
