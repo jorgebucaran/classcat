@@ -2,9 +2,9 @@
 
 [![CI](https://img.shields.io/travis/jorgebucaran/classcat/master.svg)](https://travis-ci.org/jorgebucaran/classcat) [![Codecov](https://img.shields.io/codecov/c/github/jorgebucaran/classcat/master.svg)](https://codecov.io/gh/jorgebucaran/classcat) [![npm](https://img.shields.io/npm/v/classcat.svg)](https://www.npmjs.org/package/classcat)
 
-Classcat is a declarative string builder optimized for DOM [`className`](https://developer.mozilla.org/en-US/docs/Web/API/Element/className) properties. 
+Classcat is a declarative string builder optimized for DOM [`className`](https://developer.mozilla.org/en-US/docs/Web/API/Element/className) properties. It's tiny ([300B](https://bundlephobia.com/result?p=classcat)), [fast](#benchmark-results) and framework agnostic—use it with React, Preact, Hyperapp—your choice!
 
-Each class can be conditionally added and removed depending on the falsiness of the value it is paired with. Here is a button you can toggle on and off. Go ahead and [try it online](https://codepen.io/jorgebucaran/pen/NYgLwG?editors=0010).
+Classes are conditionally added or removed based on the falsiness of the value you pair it with. Here is an example with a button you can toggle on and off. [Try it online](https://codepen.io/jorgebucaran/pen/NYgLwG?editors=0010).
 
 ```jsx
 import cc from "classcat"
@@ -22,13 +22,6 @@ export const ToggleButton = ({ isOn }) => (
   </div>
 )
 ```
-
-## Features
-
-- Tiny ([300B](https://bundlephobia.com/result?p=classcat))
-- Zero dependency
-- 5x [faster](#benchmark-results) drop-in replacement for JedWatson/classNames
-- Framework agnostic — use with React, Preact, Hyperapp — your choice!
 
 ## Installation
 
@@ -135,4 +128,4 @@ clsx × 1,194,463 ops/sec
 
 ## License
 
-Classcat is MIT licensed. See [LICENSE](LICENSE.md).
+[MIT](LICENSE.md)
