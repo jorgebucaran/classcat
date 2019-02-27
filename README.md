@@ -4,7 +4,7 @@
 
 Classcat is a declarative string builder optimized for DOM [`className`](https://developer.mozilla.org/en-US/docs/Web/API/Element/className) properties. It's tiny ([300B](https://bundlephobia.com/result?p=classcat)), [fast](#benchmark-results) and framework agnostic—use it with React, Preact, Hyperapp—your choice!
 
-Classes are conditionally added or removed based on the falsiness of the value you pair it with. Here is an example with a button you can toggle on and off. [Try it online](https://codepen.io/jorgebucaran/pen/NYgLwG?editors=0010).
+Classes are conditionally added or removed based on the falsiness of the value you pair it with. [Here is an example](https://codepen.io/jorgebucaran/pen/NYgLwG?editors=0010) with a button you can toggle on and off.
 
 ```jsx
 import cc from "classcat"
