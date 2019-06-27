@@ -1,8 +1,8 @@
 {
   "name": "classcat",
-  "description": "Declarative string builder for DOM className properties.",
+  "description": "Build a space-separated class attribute quickly.",
   "version": "3.2.5",
-  "main": "dist/classcat.js",
+  "main": "src/index.js",
   "module": "src/index.js",
   "typings": "classcat.d.ts",
   "license": "MIT",
@@ -24,17 +24,17 @@
   "scripts": {
     "test": "nyc -i esm -r lcov testmatrix test/*.test.js && nyc report && tsc -p test/ts",
     "build": "npm run bundle && npm run minify",
-    "bundle": "rollup -i src/index.js -o dist/classcat.js -m -f umd -n classcat",
-    "minify": "terser dist/classcat.js -o dist/classcat.js -mc pure_funcs=['Object.defineProperty'] --source-map includeSources,url=classcat.js.map",
+    "bundle": "rollup -i src/index.js -o dist/classcat.js --no-esModule -mf iife -n classcat",
+    "minify": "terser dist/classcat.js -o dist/classcat.js -mc --source-map includeSources,url=classcat.js.map",
     "prepare": "npm run build",
-    "release": "npm run build && npm test && git commit -am $npm_package_version && git tag $npm_package_version && git push origin master && git push --tags && npm publish"
+    "release": "v=$npm_package_version; npm run build && git commit -am $v && git tag -s $v -m $v && git push && git push --tags && npm publish"
   },
   "devDependencies": {
-    "esm": "^3.0.84",
-    "nyc": "13.1.0",
+    "esm": "^3.2.25",
+    "nyc": "14.1.1",
     "testmatrix": "0.1.2",
-    "rollup": "^1.0.0",
-    "typescript": "^3.2.2",
-    "terser": "^3.14.0"
+    "rollup": "^1.16.2",
+    "typescript": "^3.5.2",
+    "terser": "^4.0.0"
   }
 }
