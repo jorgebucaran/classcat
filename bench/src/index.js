@@ -20,7 +20,7 @@ runBenchmark(
       ]
     },
     {
-      name: "# Strings & Objects",
+      name: "# Strings/Objects",
       args: [
         "one",
         "two",
@@ -47,7 +47,7 @@ runBenchmark(
       ]
     },
     {
-      name: "# Arrays & Objects",
+      name: "# Arrays/Objects",
       args: [
         "one",
         {
