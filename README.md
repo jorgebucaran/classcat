@@ -1,10 +1,27 @@
-# Classcat
+# Classcat [![npm](https://img.shields.io/npm/v/classcat.svg?label=&color=0080FF)](https://github.com/jorgebucaran/classcat/releases/latest) [![Travis CI](https://img.shields.io/travis/jorgebucaran/classcat.svg?label=)](https://travis-ci.org/jorgebucaran/classcat)
 
-[![CI](https://img.shields.io/travis/jorgebucaran/classcat/master.svg)](https://travis-ci.org/jorgebucaran/classcat) [![Codecov](https://img.shields.io/codecov/c/github/jorgebucaran/classcat/master.svg)](https://codecov.io/gh/jorgebucaran/classcat) [![npm](https://img.shields.io/npm/v/classcat.svg)](https://www.npmjs.org/package/classcat)
+> Build a space-separated [class attribute](https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/class) quickly.
 
-Classcat is a declarative string builder optimized for DOM [`className`](https://developer.mozilla.org/en-US/docs/Web/API/Element/className) properties. It's tiny ([300B](https://bundlephobia.com/result?p=classcat)), [fast](#benchmark-results) and framework agnostic—use it with React, Preact, Hyperapp—your choice!
+- Easily add and remove class names based on a truthy or falsy value.
+- Works with any view framework—React, Preact, Hyperapp—your pick!
+- Up to 5x faster than the alternatives ([run the benchmarks](#run-the-benchmarks)).
+- Tiny ([200B](http://bundlephobia.com/result?p=classcat)) and no dependencies.
 
-Classes are conditionally added or removed based on the falsiness of the value you pair it with. [Here is an example](https://codepen.io/jorgebucaran/pen/NYgLwG?editors=0010) with a button you can toggle on and off.
+## Quickstart
+
+```console
+npm i classcat
+```
+
+Don't want to set up a build step? Import Classcat in a `<script>` tag as a module. Don't worry; modules are supported in all evergreen, self-updating desktop, and mobile browsers.
+
+```html
+<script type="module">
+  import cc from "https://unpkg.com/classcat"
+</script>
+```
+
+Here's the first example to get you started: [a toggle button](https://codepen.io/jorgebucaran/pen/NYgLwG?editors=0010).
 
 ```jsx
 import cc from "classcat"
@@ -23,108 +40,47 @@ export const ToggleButton = ({ isOn }) => (
 )
 ```
 
-## Installation
+The `cc` function takes a list of class names as an array or object of name-value pairs and joins all the [truthy](https://developer.mozilla.org/en-US/docs/Glossary/Truthy) values into a space-separated string. Arrays can also contain objects and even nested arrays. That's really all there is to it!
 
-<pre>
-npm i <a href="https://www.npmjs.com/package/classcat">classcat</a>
-</pre>
-
-Don't want to set up a build environment? Download classcat from a CDN and it will be globally available through the `window.classcat` object. Classcat works in all browsers >= IE9.
-
-```html
-<script src="https://unpkg.com/classcat"></script>
-```
-
-## Usage
-
-Classcat expects an array of elements _or_ an object of key/value pairs and joins all the elements in the array and object keys. [Falsy](https://developer.mozilla.org/en-US/docs/Glossary/Falsy) array elements and object properties will be ignored. Single string or number values need not be in an array.
-
-```jsx
+```js
 import cc from "classcat"
 
-cc("foo") //=> "foo"
+cc(["foo", "bar", "baz"]) //=> "foo bar baz"
 
-cc({ foo: true, bar: false }) //=> "foo"
+cc({ foo: false, bar: null, baz: undefined }) //=> ""
+
+cc({ foo: true, bar: false, baz: true }) //=> "foo baz"
 
 cc([{ foo: true, bar: false }, "baz"]) //=> "foo baz"
-
-cc([null, { foo: true, bar: false }, "baz", 0, undefined]) //=> "foo baz"
 ```
 
-Arrays will be recursively flattened as per the rules above.
+## Run the benchmarks
 
-```jsx
-cc(["foo", ["bar", { baz: true, bam: false }]]) //=> "foo bar baz"
-```
-
-[Variable number of arguments](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/arguments) are not supported. Wrap multiple arguments in an array.
-
-```js
-cc("foo", "bar", "baz") //=> "foo"
-```
-
-Use to set the class/className of an element created with your chosen view framework.
-
-```jsx
-const popupView = popup => (
-  <div
-    class={cc({
-      popup: true,
-      "popup-important": popup.isImportant,
-      "popup-seen": popup.isSeen
-    })}
-  >
-    {popup.content}
-  </div>
-)
-```
-
-## API
-
-### default(names)
-
-#### names
-
-A number, string, object or array. Objects consist of className/value pairs. Arrays are recursively reduced, therefore elements can be of any type aforementioned. Truthy values are added to the output, falsy values are ignored.
-
-```js
-cc(["foo", "bar", { baz: true, bam: false }, undefined]) //=> "foo bar baz"
-```
-
-## Benchmark Results
-
-All benchmarks run on a 2.4GHz Intel Core i7 CPU with 16 GB memory.
-
-```
+```console
 npm run build && npm i -C bench && npm -C bench start
 ```
 
-<pre>
+```console
 # Strings
-<em>classcat × 15,009,674 ops/sec</em>
-classnames × 3,191,312 ops/sec
-clsx × 2,563,378 ops/sec
+classcat × 20,689,684 ops/sec
+classnames × 4,189,458 ops/sec
 
 # Objects
-<em>classcat × 20,053,517 ops/sec</em>
-classnames × 3,479,564 ops/sec
-clsx × 2,509,453 ops/sec
+classcat × 25,207,387 ops/sec
+classnames × 4,479,830 ops/sec
 
-# Strings & Objects
-<em>classcat × 11,317,394 ops/sec</em>
-classnames × 3,006,549 ops/sec
-clsx × 2,100,306 ops/sec
+# Strings/Objects
+classcat × 15,050,993 ops/sec
+classnames × 3,731,854 ops/sec
 
 # Arrays
-<em>classcat × 4,142,953 ops/sec</em>
-classnames × 986,519 ops/sec
-clsx × 531,326 ops/sec
+classcat × 5,333,405 ops/sec
+classnames × 1,120,879 ops/sec
 
-# Arrays & Objects
-<em>classcat × 4,892,534 ops/sec</em>
-classnames × 2,354,448 ops/sec
-clsx × 1,194,463 ops/sec
-</pre>
+# Arrays/Objects
+classcat × 6,907,586 ops/sec
+classnames × 2,786,756 ops/sec
+```
 
 ## License
 
