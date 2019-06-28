@@ -1,7 +1,7 @@
 {
   "name": "classcat",
   "description": "Build a space-separated class attribute quickly.",
-  "version": "4.0.0",
+  "version": "4.0.1",
   "main": "dist/classcat.js",
   "module": "src/index.js",
   "unpkg": "src/index.js",
