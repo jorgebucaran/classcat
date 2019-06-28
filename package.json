@@ -23,9 +23,11 @@
   ],
   "scripts": {
     "test": "nyc -i esm -r lcov testmatrix test/*.test.js && nyc report && tsc -p test/ts",
-    "build": "npm run bundle && npm run minify",
+    "build": "npm run bundle && npm run bundle-umd && npm run minify && npm run minify-umd",
     "bundle": "rollup -i src/index.js -o dist/classcat.js --no-esModule -mf iife -n classcat",
+    "bundle-umd": "rollup -i src/index.js -o dist/classcat.umd.js -mf umd -n classcat",
     "minify": "terser dist/classcat.js -o dist/classcat.js -mc --source-map includeSources,url=classcat.js.map",
+    "minify-umd": "terser dist/classcat.umd.js -o dist/classcat.umd.js -mc pure_funcs=['Object.defineProperty'] --source-map includeSources,url=classcat.umd.js.map",
     "prepare": "npm run build",
     "release": "v=$npm_package_version; npm run build && git commit -am $v && git tag -s $v -m $v && git push && git push --tags && npm publish"
   },
