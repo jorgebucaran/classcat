@@ -5,7 +5,7 @@
 - Easily add and remove class names based on a truthy or falsy value.
 - Works with any view framework—React, Preact, Hyperapp—your pick!
 - Up to 5x faster than the alternatives ([run the benchmarks](#run-the-benchmarks)).
-- Tiny ([200B](http://bundlephobia.com/result?p=classcat)) and no dependencies.
+- Tiny ([260B](http://bundlephobia.com/result?p=classcat)) and no dependencies.
 
 ## Quickstart
 
