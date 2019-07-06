@@ -42,8 +42,14 @@ export const ToggleButton = ({ isOn }) => (
 
 The `cc` function takes a list of class names as an array or object of name-value pairs and joins all the [truthy](https://developer.mozilla.org/en-US/docs/Glossary/Truthy) values into a space-separated string. Arrays can also contain objects and even nested arrays. That's really all there is to it!
 
+## API
+
+### `cc(string | number | object | array)`
+
 ```js
 import cc from "classcat"
+
+cc("foo") //=> "foo"
 
 cc(["foo", "bar", "baz"]) //=> "foo bar baz"
 
