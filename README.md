@@ -1,4 +1,4 @@
-# Classcat [![npm](https://img.shields.io/npm/v/classcat.svg?label=&color=0080FF)](https://github.com/jorgebucaran/classcat/releases/latest) [![Travis CI](https://img.shields.io/travis/jorgebucaran/classcat.svg?label=)](https://travis-ci.org/jorgebucaran/classcat)
+# Classcat [![npm](https://img.shields.io/npm/v/classcat.svg?label=&color=0080FF)](https://github.com/jorgebucaran/classcat/releases/latest)
 
 > Build a space-separated [class attribute](https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/class) quickly.
 
