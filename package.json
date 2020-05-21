@@ -1,10 +1,9 @@
 {
   "name": "classcat",
-  "description": "Build a space-separated class attribute quickly.",
+  "description": "Build a class attribute string quickly.",
   "version": "4.1.0",
   "type": "module",
   "main": "dist/classcat.js",
-  "module": "src/index.js",
   "unpkg": "src/index.js",
   "typings": "classcat.d.ts",
   "license": "MIT",

@@ -1,19 +1,20 @@
 const isArray = Array.isArray
 
-export default function cc(obj) {
-  if (typeof obj === "string" || typeof obj === "number") return "" + obj
+export default function cc(names) {
+  if (typeof names === "string" || typeof names === "number") return "" + names
 
   let out = ""
-  if (isArray(obj))
-    for (let i = 0, tmp; i < obj.length; i++) {
-      if ((tmp = cc(obj[i])) !== "") {
+  if (isArray(names)) {
+    for (let i = 0, tmp; i < names.length; i++) {
+      if ((tmp = cc(names[i])) !== "") {
         out += (out && " ") + tmp
       }
     }
-  else
-    for (let k in obj) {
-      if (obj.hasOwnProperty(k) && obj[k]) out += (out && " ") + k
+  } else {
+    for (let k in names) {
+      if (names[k]) out += (out && " ") + k
     }
+  }
 
   return out
 }
