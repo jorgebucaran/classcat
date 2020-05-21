@@ -5,7 +5,6 @@
   "main": "dist/classcat.js",
   "module": "src/index.js",
   "unpkg": "src/index.js",
-  "browser": "src/index.js",
   "typings": "classcat.d.ts",
   "license": "MIT",
   "repository": "jorgebucaran/classcat",
@@ -24,19 +23,18 @@
     "concat"
   ],
   "scripts": {
-    "test": "nyc -i esm -r lcov testmatrix test/*.test.js && nyc report && tsc -p test/ts",
+    "test": "nyc -i esm -r lcov testmatrix test/*.test.js && nyc report",
     "build": "export pkg=$npm_package_name; npm run bundle && npm run minify",
-    "bundle": "rollup -i src/index.js -o dist/$pkg.js --no-esModule -mf umd -n $pkg",
+    "bundle": "rollup -i src/index.js -o dist/$pkg.js --no-strict -mf umd -n $pkg",
     "minify": "terser dist/$pkg.js -o dist/$pkg.js -mc --source-map includeSources,url=$pkg.js.map",
     "prepare": "npm run build",
     "release": "v=$npm_package_version; npm run build && git commit -am $v && git tag -s $v -m $v && git push && git push --tags && npm publish"
   },
   "devDependencies": {
     "esm": "^3.2.25",
-    "nyc": "14.1.1",
+    "nyc": "15.0.1",
     "testmatrix": "0.1.2",
     "rollup": "*",
-    "typescript": "^3.5.2",
-    "terser": "^4.0.0"
+    "terser": "^4.7.0"
   }
 }

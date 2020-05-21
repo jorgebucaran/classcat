@@ -3,9 +3,9 @@
 > Build a space-separated [class attribute](https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/class) quickly.
 
 - Easily add and remove class names based on a truthy or falsy value.
-- Works with any view framework—React, Preact, Hyperapp—your pick!
-- Up to 5x faster than the alternatives ([run the benchmarks](#run-the-benchmarks)).
-- Tiny ([260B](http://bundlephobia.com/result?p=classcat)) and no dependencies.
+- Works best when paired with a view framework. which will it be?
+- Up to 2.5x faster than the alternatives ([run the benchmarks](#run-the-benchmarks)).
+- Ridiculously tiny at [260B](http://bundlephobia.com/result?p=classcat). No dependencies.
 
 ## Quickstart
 
@@ -13,7 +13,7 @@
 npm i classcat
 ```
 
-Don't want to set up a build step? Import Classcat in a `<script>` tag as a module. Don't worry; modules are supported in all evergreen, self-updating desktop, and mobile browsers.
+Don't want to set up a build step? Import it inside a `<script>` tag as a module. Don't worry; modules are supported in all evergreen, self-updating desktop, and mobile browsers.
 
 ```html
 <script type="module">
@@ -21,7 +21,7 @@ Don't want to set up a build step? Import Classcat in a `<script>` tag as a modu
 </script>
 ```
 
-Here's the first example to get you started: [a toggle button](https://codepen.io/jorgebucaran/pen/NYgLwG?editors=0010).
+Classcat takes an array of strings or name-value object and joins all the [truthy](https://developer.mozilla.org/en-US/docs/Glossary/Truthy) values into a space-separated string. Arrays may be nested too. That's really all there is to it. Here's the [first example](https://codepen.io/jorgebucaran/pen/NYgLwG?editors=0010) to get you started.
 
 ```jsx
 import cc from "classcat"
@@ -32,15 +32,13 @@ export const ToggleButton = ({ isOn }) => (
       class={cc({
         circle: true,
         off: !isOn,
-        on: isOn
+        on: isOn,
       })}
     />
     <span class={cc({ textOff: !isOn })}>{isOn ? "ON" : "OFF"}</span>
   </div>
 )
 ```
-
-The `cc` function takes a list of class names as an array or object of name-value pairs and joins all the [truthy](https://developer.mozilla.org/en-US/docs/Glossary/Truthy) values into a space-separated string. Arrays can also contain objects and even nested arrays. That's really all there is to it!
 
 ## API
 
@@ -68,24 +66,34 @@ npm run build && npm i -C bench && npm -C bench start
 
 ```console
 # Strings
-classcat × 20,689,684 ops/sec
-classnames × 4,189,458 ops/sec
+classcat × 15,927,163 ops/sec
+classnames × 2,694,533 ops/sec
+clsx × 8,542,847 ops/sec
 
 # Objects
-classcat × 25,207,387 ops/sec
-classnames × 4,479,830 ops/sec
+classcat × 15,205,051 ops/sec
+classnames × 2,873,497 ops/sec
+clsx × 8,806,231 ops/sec
 
 # Strings/Objects
-classcat × 15,050,993 ops/sec
-classnames × 3,731,854 ops/sec
+classcat × 13,834,475 ops/sec
+classnames × 3,013,424 ops/sec
+clsx × 5,890,821 ops/sec
 
 # Arrays
-classcat × 5,333,405 ops/sec
-classnames × 1,120,879 ops/sec
+classcat × 3,649,723 ops/sec
+classnames × 709,177 ops/sec
+clsx × 2,513,014 ops/sec
 
 # Arrays/Objects
-classcat × 6,907,586 ops/sec
-classnames × 2,786,756 ops/sec
+classcat × 4,290,009 ops/sec
+classnames × 1,856,967 ops/sec
+clsx × 3,099,573 ops/sec
+
+# Arguments vs Array
+classcat × 3,089,353 ops/sec
+classnames × 828,906 ops/sec
+clsx × 3,057,879 ops/sec
 ```
 
 ## License

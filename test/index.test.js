@@ -1,4 +1,4 @@
-import cc from "../src"
+import cc from "../src/"
 import { equal } from "testmatrix"
 
 export default {
