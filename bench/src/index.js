@@ -7,7 +7,7 @@ runBenchmark(
   [
     {
       name: "# Strings",
-      args: ["one", "two", "three"]
+      args: ["one", "two", "three"],
     },
     {
       name: "# Objects",
@@ -15,9 +15,9 @@ runBenchmark(
         {
           one: true,
           two: true,
-          three: false
-        }
-      ]
+          three: false,
+        },
+      ],
     },
     {
       name: "# Strings/Objects",
@@ -26,9 +26,9 @@ runBenchmark(
         "two",
         {
           four: true,
-          three: false
-        }
-      ]
+          three: false,
+        },
+      ],
     },
     {
       name: "# Arrays",
@@ -38,13 +38,13 @@ runBenchmark(
         ["four", ["five"]],
         [
           {
-            six: true
+            six: true,
           },
           {
-            seven: false
-          }
-        ]
-      ]
+            seven: false,
+          },
+        ],
+      ],
     },
     {
       name: "# Arrays/Objects",
@@ -52,20 +52,39 @@ runBenchmark(
         "one",
         {
           two: true,
-          three: false
+          three: false,
         },
         {
           four: "foo",
-          five: true
+          five: true,
         },
         6,
-        {}
-      ]
-    }
+        {},
+      ],
+    },
+    {
+      name: "# Arguments vs Array",
+      args: [
+        ["one", "two"],
+        ["three"],
+        ["four", ["five"]],
+        [
+          {
+            six: true,
+          },
+          {
+            seven: false,
+          },
+        ],
+      ],
+      unique: true,
+    },
   ].reduce(
-    (t, { name, args }) => ({
+    (t, { name, args, unique }) => ({
       ...t,
-      [name]: c => c(args)
+      [name]: unique
+        ? (c, id) => (id === "classcat" ? c(args) : c(...args))
+        : (c) => c(args),
     }),
     {}
   ),
