@@ -6,27 +6,27 @@ export default {
     {
       name: "empty object",
       class: {},
-      expected: ""
+      expected: "",
     },
     {
       name: "empty array",
       class: [],
-      expected: ""
+      expected: "",
     },
     {
-      name: "falsy arguments",
-      class: ["", null, false, undefined, 0, NaN],
-      expected: ""
+      name: "ignore \"\", null, true/false, and undefined",
+      class: ["", null, false, undefined, true],
+      expected: "",
     },
     {
       name: "array of class names",
       class: ["foo", "bar", false, "baz"],
-      expected: "foo bar baz"
+      expected: "foo bar baz",
     },
     {
       name: "array of arrays",
       class: ["foo", ["bar", [false, "baz"]]],
-      expected: "foo bar baz"
+      expected: "foo bar baz",
     },
     {
       name: "object of class names",
@@ -34,9 +34,9 @@ export default {
         foo: true,
         bar: true,
         quux: false,
-        baz: true
+        baz: true,
       },
-      expected: "foo bar baz"
+      expected: "foo bar baz",
     },
     {
       name: "array of objects and arrays",
@@ -44,26 +44,16 @@ export default {
         "foo",
         "foo-bar",
         {
-          "foo-baz": true
+          "foo-baz": true,
         },
-        ["fum", "bam", "pow"]
+        ["fum", "bam", "pow"],
       ],
-      expected: "foo foo-bar foo-baz fum bam pow"
-    }
-  ]
-    .map(({ name, class: c, expected }) => ({
-      name,
-      assert: equal,
-      actual: cc(c),
-      expected
-    }))
-    .concat({
-      name: "not owned props",
-      assert: equal,
-      actual: done => {
-        Object.prototype.myFunction = () => {}
-        done(cc({}), delete Object.prototype.myFunction)
-      },
-      expected: ""
-    })
+      expected: "foo foo-bar foo-baz fum bam pow",
+    },
+  ].map(({ name, class: c, expected }) => ({
+    name,
+    assert: equal,
+    actual: cc(c),
+    expected,
+  })),
 }
