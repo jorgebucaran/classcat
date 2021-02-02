@@ -15,7 +15,7 @@ export default {
     },
     {
       name: "falsy arguments",
-      class: ["", null, false, undefined, 0, NaN],
+      class: ["", null, false, undefined],
       expected: ""
     },
     {
