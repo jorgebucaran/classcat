@@ -1,13 +1,13 @@
 var isArray = Array.isArray
 
 export default function cc(obj) {
+  if (typeof obj === "string") return obj;
+  else if (typeof obj === "number") return obj.toString();
+
   var out = ""
-
-  if (typeof obj === "string" || typeof obj === "number") return obj || ""
-
   if (isArray(obj))
-    for (var k = 0, tmp; k < obj.length; k++) {
-      if ((tmp = cc(obj[k])) !== "") {
+    for (var i = 0, tmp; i < obj.length; i++) {
+      if ((tmp = cc(obj[i])) !== "") {
         out += (out && " ") + tmp
       }
     }
