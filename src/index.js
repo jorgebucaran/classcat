@@ -1,8 +1,8 @@
 var isArray = Array.isArray
 
 export default function cc(obj) {
-  if (typeof obj === "string") return obj;
-  else if (typeof obj === "number") return obj.toString();
+  if (typeof obj === "string") return obj
+  else if (typeof obj === "number") return obj.toString()
 
   var out = ""
   if (isArray(obj))
