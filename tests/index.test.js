@@ -1,4 +1,4 @@
-import cc from "../src/index.js"
+import cc from "../index.js"
 import { t, equal } from "twist"
 
 export default [

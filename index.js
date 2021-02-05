@@ -1,10 +1,9 @@
-const isArray = Array.isArray
-
 export default function cc(names) {
   if (typeof names === "string" || typeof names === "number") return "" + names
 
   let out = ""
-  if (isArray(names)) {
+
+  if (Array.isArray(names)) {
     for (let i = 0, tmp; i < names.length; i++) {
       if ((tmp = cc(names[i])) !== "") {
         out += (out && " ") + tmp
