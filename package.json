@@ -2,6 +2,7 @@
   "name": "classcat",
   "description": "Build a space-separated class attribute quickly.",
   "version": "4.1.0",
+  "type": "module",
   "main": "dist/classcat.js",
   "module": "src/index.js",
   "unpkg": "src/index.js",
@@ -15,15 +16,13 @@
   ],
   "author": "Jorge Bucaran",
   "keywords": [
-    "class",
-    "classcat",
-    "classname",
-    "attribute",
+    "classnames",
     "classlist",
-    "concat"
+    "concat",
+    "class"
   ],
   "scripts": {
-    "test": "nyc -i esm -r lcov testmatrix test/*.test.js && nyc report",
+    "test": "c8 twist tests/*.js",
     "build": "export pkg=$npm_package_name; npm run bundle && npm run minify",
     "bundle": "rollup -i src/index.js -o dist/$pkg.js --no-strict -mf umd -n $pkg",
     "minify": "terser dist/$pkg.js -o dist/$pkg.js -mc --source-map includeSources,url=$pkg.js.map",
@@ -31,10 +30,9 @@
     "release": "v=$npm_package_version; npm run build && git commit -am $v && git tag -s $v -m $v && git push && git push --tags && npm publish"
   },
   "devDependencies": {
-    "esm": "^3.2.25",
-    "nyc": "15.0.1",
-    "testmatrix": "0.1.2",
+    "c8": "*",
     "rollup": "*",
-    "terser": "^4.7.0"
+    "terser": "*",
+    "twist": "*"
   }
 }
