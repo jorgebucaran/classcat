@@ -20,6 +20,11 @@ export default [
       equal(cc(false), ""),
       equal(cc([true, false]), ""),
     ]),
+    t("numbers", [
+      equal(cc(0), "0"),
+      equal(cc([0, 1]), "0 1"),
+      equal(cc({ 0: true, 1: true }), "0 1"),
+    ]),
     t("empty strings", [
       equal(cc(""), ""),
       equal(
