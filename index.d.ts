@@ -8,4 +8,8 @@ export interface ClassArray extends Array<Class> {}
 
 export type Class = string | number | ClassObject | ClassArray
 
-export default function(names: Class): string
+/**
+ * @param names A string, array or object of CSS class names (as keys).
+ * @returns The class attribute string.
+ */
+export default function (names: Class): string
