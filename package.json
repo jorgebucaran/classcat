@@ -3,7 +3,7 @@
   "version": "5.0.0",
   "type": "module",
   "main": "index.cjs",
-  "typings": "classcat.d.ts",
+  "types": "classcat.d.ts",
   "description": "Build a class attribute string quickly.",
   "repository": "jorgebucaran/classcat",
   "license": "MIT",
