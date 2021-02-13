@@ -1,7 +1,7 @@
-import classcat from "../../src/index"
+import { runBenchmark } from "./runBenchmark.js"
+import classcat from "../index.js"
 import classnames from "classnames"
 import clsx from "clsx"
-import { runBenchmark } from "./runBenchmark"
 
 runBenchmark(
   [

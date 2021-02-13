@@ -1,4 +1,4 @@
-import cc from "../src/index.js"
+import cc from "../index.js"
 import { t, equal } from "twist"
 
 export default [
@@ -20,46 +20,51 @@ export default [
       equal(cc(false), ""),
       equal(cc([true, false]), ""),
     ]),
+    t("numbers", [
+      equal(cc(0), "0"),
+      equal(cc([0, 1]), "0 1"),
+      equal(cc({ 0: true, 1: true }), "0 1"),
+    ]),
     t("empty strings", [
       equal(cc(""), ""),
       equal(
         cc({
-          dog: "",
-          cat: "",
-          mouse: "",
+          elf: "",
+          orc: "",
+          gnome: "",
         }),
         ""
       ),
       equal(cc(["", "", ""]), ""),
     ]),
     t("arrays of strings", [
-      equal(cc(["dog", "cat", false, "mouse"]), "dog cat mouse"),
+      equal(cc(["elf", "orc", false, "gnome"]), "elf orc gnome"),
     ]),
     t("array of arrays", [
-      equal(cc(["dog", ["cat", [false, "mouse"]]]), "dog cat mouse"),
+      equal(cc(["elf", ["orc", [false, "gnome"]]]), "elf orc gnome"),
     ]),
     t("object of key:string pairs", [
       equal(
         cc({
-          dog: true,
-          cat: true,
+          elf: true,
+          orc: true,
           dodo: false,
-          mouse: true,
+          gnome: true,
         }),
-        "dog cat mouse"
+        "elf orc gnome"
       ),
     ]),
     t("array of objects and arrays", [
       equal(
         cc([
-          "owl",
-          "eel-fox",
+          "elf",
+          "half-orc",
           {
-            "elk-dik": true,
+            "half-elf": true,
           },
-          ["auk", "olm", "emu"],
+          ["gnome", "goblin", "dwarf"],
         ]),
-        "owl eel-fox elk-dik auk olm emu"
+        "elf half-orc half-elf gnome goblin dwarf"
       ),
     ]),
   ]),
