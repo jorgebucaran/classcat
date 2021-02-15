@@ -3,7 +3,7 @@
 > Build a [`class`](https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/class) attribute string quickly.
 
 - Framework agnostic, reusable, plain vanilla JavaScript.
-- Up to [2.5x faster]() than alternatives.
+- Up to [2.5x faster](#benchmarks) than alternatives.
 - [217 B](http://bundlephobia.com/result?p=classcat) (minified+gzipped). 👌
 
 This module makes it easy to build a space-delimited `class` attribute string from an object or array of CSS class names. Just pair each class with a boolean value to add or remove them conditionally.
