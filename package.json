@@ -3,6 +3,7 @@
   "version": "5.0.1",
   "type": "module",
   "main": "index.cjs",
+  "module": "index.js",
   "types": "classcat.d.ts",
   "description": "Build a class attribute string quickly.",
   "repository": "jorgebucaran/classcat",
