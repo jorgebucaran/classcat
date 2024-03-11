@@ -12,4 +12,4 @@ export type Class = string | number | null | undefined | ClassObject | ClassArra
  * @param names A string, array or object of CSS class names (as keys).
  * @returns The class attribute string.
  */
-export default function (names: Class): string
+export default function cc(names: Class): string
